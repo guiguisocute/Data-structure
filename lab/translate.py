@@ -6,7 +6,7 @@ TRANSLATIONS = {
     "线性表的顺序实现": "Linear List Sequential Implementation",
     "不带头结点的单链表": "Singly Linked List without Head Node",
     "带头结点的单链表": "Singly Linked List with Head Node",
-    "线与字符串": "String Operations",  # 推测实际应为字符串操作
+    "栈与字符串": "Stack & String",  # 推测实际应为字符串操作
     "递归": "Recursion",
     "树": "Tree Structures",
     "二叉树": "Binary Tree Implementation",

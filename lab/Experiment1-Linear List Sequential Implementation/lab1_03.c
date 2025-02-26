@@ -22,8 +22,10 @@ void merge(sequence_list *L1,sequence_list *L2,sequence_list *L3)
 int main()
 {
     sequence_list L1,L2,L3;
-    input(&L1);				/*输入时请输入有序数据*/
-    input(&L2);				/*输入时请输入有序数据*/
+    inputfromfile(&L1,"1.txt");
+    inputfromfile(&L2,"2.txt");
+//     input(&L1);				/*输入时请输入有序数据*/
+//     input(&L2);				/*输入时请输入有序数据*/
     merge(&L1,&L2,&L3);		/*合并数据到L3*/
     print(&L3);				/*输出L3*/
 }

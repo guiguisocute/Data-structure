@@ -20,7 +20,8 @@ void sprit(sequence_list *L1,sequence_list *L2,sequence_list *L3)
 }
 int main()
 {   sequence_list L1,L2,L3;		/*定义三个顺序表*/
-    input(&L1);				    /*输入L1*/
+    inputfromfile(&L1,"3.txt");
+//     input(&L1);				    /*输入L1*/
     sprit(&L1,&L2,&L3);		    /*对L1进行分类*/
     print(&L1);				    /*输出L1、L2和L3*/
     print(&L2);
