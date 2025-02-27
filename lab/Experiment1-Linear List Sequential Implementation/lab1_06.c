@@ -12,7 +12,14 @@
   */
 void delNode1(sequence_list *L,datatype x)
 {
-   
+  int i,k = 0;
+  for(i = 0;i < L->size;i++){
+    if(L->a[i] != x){
+      L->a[k] = L->a[i]; 
+      k++;
+    }
+  }
+  L->size = k;
 }
 /*
     解法二：用k记录顺序表L中等于x的元素个数，边扫描L边统计K，并将不等
@@ -20,18 +27,27 @@ void delNode1(sequence_list *L,datatype x)
 */
 void delNode2(sequence_list *L,datatype x)
 {
-    
+    int i,k = 0;
+    for(i = 0; i < L->size;i++){
+      if(L->a[i] == x){
+      k++;
+      }else{
+        L->a[i - k] = L->a[i];
+      }
+    }
+    L->size = L->size - k;
 }
 int main()
 {
   sequence_list L;
   int x;
-  input(&L);
+  // input(&L);
+  inputfromfile(&L,"3.txt");
   print(&L);  	/*输出表L*/
   printf("请输入要删除的数：");
   scanf("%d",&x);
-  delNode1(&L,x);			/*分别测试*/
-  //delNode2(&L,x);
+  // delNode1(&L,x);			/*分别测试*/
+  delNode2(&L,x);
   printf("删除%d后的顺序表为：\n",x);
   print(&L);  						/*输出新表*/
   return 0;

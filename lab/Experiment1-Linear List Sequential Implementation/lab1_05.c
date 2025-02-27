@@ -15,7 +15,6 @@ void partion(sequence_list *L)
     j=L->size-1;
     while (i<j)
     {
-        //从左向右找偶数，奇数留在左边
         while (i<j && L->a[i]%2==1)
             i++;
         while (i<j && L->a[j]%2==0)
