@@ -1,11 +1,11 @@
 /*
-ÒÑÖªÏßĞÔ±í´æ´¢ÔÚ´øÍ·½áµãµÄµ¥Á´±íheadÖĞ£¬ÇëÉè¼ÆËã·¨º¯Êıvoid sort(linklist head)£¬½«headÖĞµÄ½áµã°´½áµãÖµÉıĞòÅÅÁĞ¡£
+å·²çŸ¥çº¿æ€§è¡¨å­˜å‚¨åœ¨å¸¦å¤´ç»“ç‚¹çš„å•é“¾è¡¨headä¸­ï¼Œè¯·è®¾è®¡ç®—æ³•å‡½æ•°void sort(linklist head)ï¼Œå°†headä¸­çš„ç»“ç‚¹æŒ‰ç»“ç‚¹å€¼å‡åºæ’åˆ—ã€‚
 */
 /**********************************/
-/*ÎÄ¼şÃû³Æ£ºlab3_05.c                 */
+/*æ–‡ä»¶åç§°ï¼šlab3_05.c                 */
 /**********************************/
 #include "slnklist.h"
-/*Çë½«±¾º¯Êı²¹³äÍêÕû£¬²¢½øĞĞ²âÊÔ*/
+/*è¯·å°†æœ¬å‡½æ•°è¡¥å……å®Œæ•´ï¼Œå¹¶è¿›è¡Œæµ‹è¯•*/
 void  sort(linklist head)
 {
         linklist p,s,pre,q;
@@ -16,7 +16,7 @@ void  sort(linklist head)
             s=p;
             p=p->next;
             s->next=NULL;
-            //²éÕÒ²åÈëÎ»ÖÃ
+            //æŸ¥æ‰¾æ’å…¥ä½ç½®
             pre=head;
             q=head->next;
             while (q &&q->info > s->info)
@@ -24,15 +24,15 @@ void  sort(linklist head)
                 pre=q;
                 q=q->next;
             }
-            s->next=q;          //²åÈëpreÖ¸Ê¾µÄ½Úµãºó
+            s->next=q;          //æ’å…¥preæŒ‡ç¤ºçš„èŠ‚ç‚¹å
             pre->next=s;
         }
 }
 int main()
 {        linklist head;
-         head=creatbyqueue();   		/*Î²²å·¨½¨Á¢´øÍ·½áµãµÄµ¥Á´±í*/
-         print(head);    			    /*Êä³öµ¥Á´±íhead*/
-         sort(head);     				/*ÅÅĞò*/
+         head=creatbyqueue();   		/*å°¾æ’æ³•å»ºç«‹å¸¦å¤´ç»“ç‚¹çš„å•é“¾è¡¨*/
+         print(head);    			    /*è¾“å‡ºå•é“¾è¡¨head*/
+         sort(head);     				/*æ’åº*/
          print(head);
          delList(head);
          return 0;

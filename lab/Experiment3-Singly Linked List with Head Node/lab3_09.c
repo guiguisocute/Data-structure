@@ -2,37 +2,37 @@
 #include <stdio.h>
  
 typedef struct node
-{       int coef;        /*ÏµÊı*/
-        int expn;       /*Ö¸Êı*/
+{       int coef;        /*ç³»æ•°*/
+        int expn;       /*æŒ‡æ•°*/
         struct node *next;
-}listnode;        //¶àÏîÊ½´æ´¢½á¹¹
+}listnode;        //å¤šé¡¹å¼å­˜å‚¨ç»“æ„
 
 typedef listnode *linklist;
 void delList(linklist head);
 
  /*
- º¯ÊıÃû³Æ£º creat()
- º¯Êı¹¦ÄÜ£º½¨Á¢¶àÏîÊ½´æ´¢½á¹¹£¬²¢ÇÒ¶àÏîÊ½ÔÚ±íÖĞ°´ËùÔÚÏîµÄÖ¸ÊıµİÔö´æ·Å
+ å‡½æ•°åç§°ï¼š creat()
+ å‡½æ•°åŠŸèƒ½ï¼šå»ºç«‹å¤šé¡¹å¼å­˜å‚¨ç»“æ„ï¼Œå¹¶ä¸”å¤šé¡¹å¼åœ¨è¡¨ä¸­æŒ‰æ‰€åœ¨é¡¹çš„æŒ‡æ•°é€’å¢å­˜æ”¾
  */
-linklist creat()            //½¨Á¢¶àÏîÊ½´æ´¢½á¹¹£¬
+linklist creat()            //å»ºç«‹å¤šé¡¹å¼å­˜å‚¨ç»“æ„ï¼Œ
 {
           linklist head,s,p,pre,r;
           int coef;
           int expn;
-          head=(linklist)malloc(sizeof(listnode));    /*Éú³ÉÍ·½áµã*/
+          head=(linklist)malloc(sizeof(listnode));    /*ç”Ÿæˆå¤´ç»“ç‚¹*/
           head->next=NULL;
-          printf("ÇëÊäÈë¶àÏîÊ½£¬Ã¿Ò»ÏîÖ»ĞèÊäÈëÏµÊı£¬Ö¸Êı(µ±ÊäÈëµÄÏµÊıÎª0Ê±½áÊøÊäÈë)£º\n");
-          scanf("%d",&coef);         //ÊäÈëÏµÊı
-          scanf("%d",&expn);        //ÊäÈëÖ¸Êı
+          printf("è¯·è¾“å…¥å¤šé¡¹å¼ï¼Œæ¯ä¸€é¡¹åªéœ€è¾“å…¥ç³»æ•°ï¼ŒæŒ‡æ•°(å½“è¾“å…¥çš„ç³»æ•°ä¸º0æ—¶ç»“æŸè¾“å…¥)ï¼š\n");
+          scanf("%d",&coef);         //è¾“å…¥ç³»æ•°
+          scanf("%d",&expn);        //è¾“å…¥æŒ‡æ•°
 
-          while (coef!=0)       //ÇëÔÚ´Ë´¦ÌîÉÏÊÊµ±µÄ´úÂë
+          while (coef!=0)       //è¯·åœ¨æ­¤å¤„å¡«ä¸Šé€‚å½“çš„ä»£ç 
            {
 
            }
          return head;
 }
 
-void print(linklist head) //Êä³ö¶àÏîÊ½
+void print(linklist head) //è¾“å‡ºå¤šé¡¹å¼
   {
         linklist p;
         p=head->next;
@@ -45,11 +45,11 @@ void print(linklist head) //Êä³ö¶àÏîÊ½
  }
 
  /*
- º¯ÊıÃû³Æ£º add()
- º¯Êı¹¦ÄÜ£º¶àÏîÊ½Ïà¼Ó
- Èë¿Ú²ÎÊı£ºaÓëbÊÇ´æ´¢¶àÏîÊ½µÄ´øÍ·½áµãµ¥Á´±í£¬²¢ÇÒ¶àÏîÊ½ÔÚ±íÖĞ°´ËùÔÚÏîµÄÖ¸ÊıµİÔö´æ·Å
+ å‡½æ•°åç§°ï¼š add()
+ å‡½æ•°åŠŸèƒ½ï¼šå¤šé¡¹å¼ç›¸åŠ 
+ å…¥å£å‚æ•°ï¼šaä¸bæ˜¯å­˜å‚¨å¤šé¡¹å¼çš„å¸¦å¤´ç»“ç‚¹å•é“¾è¡¨ï¼Œå¹¶ä¸”å¤šé¡¹å¼åœ¨è¡¨ä¸­æŒ‰æ‰€åœ¨é¡¹çš„æŒ‡æ•°é€’å¢å­˜æ”¾
  */
-linklist add(linklist a,linklist b)  //Çë½«±¾º¯Êı²¹³äÍêÕû
+linklist add(linklist a,linklist b)  //è¯·å°†æœ¬å‡½æ•°è¡¥å……å®Œæ•´
 {
             linklist pa,pb,c,pc,r;
 
@@ -60,22 +60,22 @@ int main()
  {
            linklist a,b,c;
            a=creat();
-           printf("¶àÏîÊ½aÎª£º");
+           printf("å¤šé¡¹å¼aä¸ºï¼š");
            print(a);
 
            b=creat();
-           printf("¶àÏîÊ½bÎª£º");
+           printf("å¤šé¡¹å¼bä¸ºï¼š");
            print(b);
 
            c=add(a,b);
-           printf("Á½¸ö¶àÏîÊ½µÄºÍÎª£º\n");
+           printf("ä¸¤ä¸ªå¤šé¡¹å¼çš„å’Œä¸ºï¼š\n");
            print(c);
            delList(c);
            return 0;
  }
  /***************************************/
-/*º¯ÊıÃû³Æ£ºdelList()		 	                	 */
-/*º¯Êı¹¦ÄÜ£ºÊÍ·Å´øÍ·½áµãµÄµ¥Á´±í      */
+/*å‡½æ•°åç§°ï¼šdelList()		 	                	 */
+/*å‡½æ•°åŠŸèƒ½ï¼šé‡Šæ”¾å¸¦å¤´ç»“ç‚¹çš„å•é“¾è¡¨      */
 /***************************************/
 void delList(linklist head)
 { linklist p=head;

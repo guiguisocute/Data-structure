@@ -1,11 +1,11 @@
 /*
-±àĞ´Ëã·¨º¯Êıvoid  delallx(linklist head, int x)£¬É¾³ı´øÍ·½áµãµ¥Á´±íheadÖĞËùÓĞÖµÎªxµÄ½áµã¡£
+ç¼–å†™ç®—æ³•å‡½æ•°void  delallx(linklist head, int x)ï¼Œåˆ é™¤å¸¦å¤´ç»“ç‚¹å•é“¾è¡¨headä¸­æ‰€æœ‰å€¼ä¸ºxçš„ç»“ç‚¹ã€‚
 */
 /**********************************/
-/*ÎÄ¼şÃû³Æ£ºlab3_04.c                 */
+/*æ–‡ä»¶åç§°ï¼šlab3_04.c                 */
 /**********************************/
 #include "slnklist.h"
-/*Çë½«±¾º¯Êı²¹³äÍêÕû£¬²¢½øĞĞ²âÊÔ*/
+/*è¯·å°†æœ¬å‡½æ•°è¡¥å……å®Œæ•´ï¼Œå¹¶è¿›è¡Œæµ‹è¯•*/
 void  delallx(linklist head,int x)
 {
         linklist  pre,p;
@@ -13,13 +13,13 @@ void  delallx(linklist head,int x)
         p=head->next;
         while (p)
         {
-            if (p->info==x)             //É¾³ı
+            if (p->info==x)             //åˆ é™¤
             {
                 pre->next=p->next;
                 free(p);
                 p=pre->next ;
             }
-            else            //ÁôÔÚÁ´±íÖĞ
+            else            //ç•™åœ¨é“¾è¡¨ä¸­
             {
                 pre=p;
                 p=p->next;
@@ -30,9 +30,9 @@ void  delallx(linklist head,int x)
 int main()
 {   datatype x;
     linklist head;
-    head=creatbyqueue();				/*Î²²åÈë·¨½¨Á¢´øÍ·½áµãµÄµ¥Á´±í*/
+    head=creatbyqueue();				/*å°¾æ’å…¥æ³•å»ºç«‹å¸¦å¤´ç»“ç‚¹çš„å•é“¾è¡¨*/
     print(head);
-    printf("ÇëÊäÈëÒªÉ¾³ıµÄÖµ£º");
+    printf("è¯·è¾“å…¥è¦åˆ é™¤çš„å€¼ï¼š");
     scanf("%d",&x);
     delallx(head,x);
     print(head);

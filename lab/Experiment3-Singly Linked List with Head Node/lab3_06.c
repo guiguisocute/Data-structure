@@ -1,16 +1,16 @@
 /*
-ÒÑÖªÁ½¸ö´øÍ·½áµãµÄµ¥Á´±íL1ºÍL2ÖĞµÄ½áµãÖµ¾ùÒÑ°´ÉıĞòÅÅĞò£¬Éè¼ÆËã·¨º¯Êı
-linklist mergeAscend (linklist L1,linklist L2)½«L1ºÍL2ºÏ²¢³ÉÒ»¸öÉıĞòµÄ
-´øÍ·½áµ¥Á´±í×÷Îªº¯ÊıµÄ·µ»Ø½á¹û£»
-Éè¼ÆËã·¨º¯Êılinklist mergeDescend (linklist L1,linklist L2)
-½«L1ºÍL2ºÏ²¢³ÉÒ»¸ö½µĞòµÄ´øÍ·½áµ¥Á´±í×÷Îªº¯ÊıµÄ·µ»Ø½á¹û£»
-²¢Éè¼Æmain()º¯Êı½øĞĞ²âÊÔ¡£
+å·²çŸ¥ä¸¤ä¸ªå¸¦å¤´ç»“ç‚¹çš„å•é“¾è¡¨L1å’ŒL2ä¸­çš„ç»“ç‚¹å€¼å‡å·²æŒ‰å‡åºæ’åºï¼Œè®¾è®¡ç®—æ³•å‡½æ•°
+linklist mergeAscend (linklist L1,linklist L2)å°†L1å’ŒL2åˆå¹¶æˆä¸€ä¸ªå‡åºçš„
+å¸¦å¤´ç»“å•é“¾è¡¨ä½œä¸ºå‡½æ•°çš„è¿”å›ç»“æœï¼›
+è®¾è®¡ç®—æ³•å‡½æ•°linklist mergeDescend (linklist L1,linklist L2)
+å°†L1å’ŒL2åˆå¹¶æˆä¸€ä¸ªé™åºçš„å¸¦å¤´ç»“å•é“¾è¡¨ä½œä¸ºå‡½æ•°çš„è¿”å›ç»“æœï¼›
+å¹¶è®¾è®¡main()å‡½æ•°è¿›è¡Œæµ‹è¯•ã€‚
 */
 /**********************************/
-/*ÎÄ¼şÃû³Æ£ºlab3_06.c                 */
+/*æ–‡ä»¶åç§°ï¼šlab3_06.c                 */
 /**********************************/
 #include "slnklist.h"
-/*Çë½«±¾º¯Êı²¹³äÍêÕû£¬²¢½øĞĞ²âÊÔ*/
+/*è¯·å°†æœ¬å‡½æ•°è¡¥å……å®Œæ•´ï¼Œå¹¶è¿›è¡Œæµ‹è¯•*/
 linklist mergeAscend(linklist L1,linklist L2)
 {
     linklist p,q,r;
@@ -58,7 +58,7 @@ linklist mergeDescend(linklist L1,linklist L2)
             if (p->info< q->info)
             {
                 L1->next=p->next;
-                p->next=head->next;   //Í·²åÈë
+                p->next=head->next;   //å¤´æ’å…¥
                 head->next=p;
                 p=L1->next;
             }
@@ -73,7 +73,7 @@ linklist mergeDescend(linklist L1,linklist L2)
     while  (p)
     {
                 L1->next=p->next;
-                p->next=head->next;   //Í·²åÈë
+                p->next=head->next;   //å¤´æ’å…¥
                 head->next=p;
                 p=L1->next;
     }
@@ -90,13 +90,13 @@ linklist mergeDescend(linklist L1,linklist L2)
 }
 int main()
 {       linklist h1,h2,h3;
-         h1=creatbyqueue();     /*Î²²å·¨½¨Á¢µ¥Á´±í,ÇëÊäÈëÉıĞòĞòÁĞ*/
+         h1=creatbyqueue();     /*å°¾æ’æ³•å»ºç«‹å•é“¾è¡¨,è¯·è¾“å…¥å‡åºåºåˆ—*/
          h2=creatbyqueue();
          print(h1);
          print(h2);
-         //h3=mergeAscend(h1,h2);/*ÉıĞòºÏ²¢µ½h3*/
+         //h3=mergeAscend(h1,h2);/*å‡åºåˆå¹¶åˆ°h3*/
          h3=mergeDescend(h1,h2);
-            /*½µĞòºÏ²¢Çëµ÷ÓÃh3=mergeDescend(h1,h2); */
+            /*é™åºåˆå¹¶è¯·è°ƒç”¨h3=mergeDescend(h1,h2); */
          print(h3);
          delList(h3);
          return 0;
