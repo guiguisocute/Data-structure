@@ -1,14 +1,14 @@
 /*
-  Çë±àĞ´µİ¹éº¯Êıvoid bubbleSort(int a[],int n)£¬
-  ¶Ô³¤¶ÈÎªnµÄÊı×é²ÉÓÃÃ°Åİ·¨½øĞĞÉıĞòÅÅĞò¡£
-  Çë±àĞ´µİ¹éº¯Êıint binSearch(int a[], int left, int right,int key)£¬
-  ²ÉÓÃ¶ş·Ö²éÕÒ·¨ÔÚÊı×éa[left..right]ÖĞ²éÕÒÖµÎªkeyµÄÔªËØËùÔÚµÄÎ»ÖÃ£¬
-  Èô²éÕÒÊ§°Üº¯Êı·µ»Ø-1¡£
+  è¯·ç¼–å†™é€’å½’å‡½æ•°void bubbleSort(int a[],int n)ï¼Œ
+  å¯¹é•¿åº¦ä¸ºnçš„æ•°ç»„é‡‡ç”¨å†’æ³¡æ³•è¿›è¡Œå‡åºæ’åºã€‚
+  è¯·ç¼–å†™é€’å½’å‡½æ•°int binSearch(int a[], int left, int right,int key)ï¼Œ
+  é‡‡ç”¨äºŒåˆ†æŸ¥æ‰¾æ³•åœ¨æ•°ç»„a[left..right]ä¸­æŸ¥æ‰¾å€¼ä¸ºkeyçš„å…ƒç´ æ‰€åœ¨çš„ä½ç½®ï¼Œ
+  è‹¥æŸ¥æ‰¾å¤±è´¥å‡½æ•°è¿”å›-1ã€‚
   */ 
 
 #include "ArrayIo.h"
 #define N 10
-/*Çë½«±¾º¯Êı²¹³äÍêÕû£¬²¢½øĞĞ²âÊÔ*/
+/*è¯·å°†æœ¬å‡½æ•°è¡¥å……å®Œæ•´ï¼Œå¹¶è¿›è¡Œæµ‹è¯•*/
 void bubbleSort(int a[],int n)
 {
 
@@ -22,7 +22,7 @@ int main()
     init(a,N);
    	bubbleSort(a,N);
     print(a,N);
-    printf("ÇëÊäÈëÒª²éÕÒµÄÊı£º\n");
+    printf("è¯·è¾“å…¥è¦æŸ¥æ‰¾çš„æ•°ï¼š\n");
     scanf("%d",&x);
     pos=binSearch(a,0,N-1,x);
     if (pos!=-1) printf("a[%d]=%d\n",pos,x);

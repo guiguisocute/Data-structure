@@ -1,5 +1,5 @@
 /*
-   ¼ÙÉèÊ÷²ÉÓÃÖ¸Õë·½Ê½µÄº¢×Ó±íÊ¾·¨±íÊ¾£¬ÊÔ±àĞ´Ò»¸ö·Çµİ¹éº¯Êıvoid PostOrder1(tree t)£¬ÊµÏÖÊ÷µÄºóĞò±éÀúËã·¨¡£
+   å‡è®¾æ ‘é‡‡ç”¨æŒ‡é’ˆæ–¹å¼çš„å­©å­è¡¨ç¤ºæ³•è¡¨ç¤ºï¼Œè¯•ç¼–å†™ä¸€ä¸ªéé€’å½’å‡½æ•°void PostOrder1(tree t)ï¼Œå®ç°æ ‘çš„ååºéå†ç®—æ³•ã€‚
 */
 
 #include "tree.h"
@@ -12,7 +12,7 @@ int main ()
     tree root;
     printf("please input the preorder sequence of the tree:\n");
     root =createtree();
-    printf("ºóĞòĞòÁĞÊÇ£º\n");
+    printf("ååºåºåˆ—æ˜¯ï¼š\n");
     PostOrder1(root);
     return 0;
 }

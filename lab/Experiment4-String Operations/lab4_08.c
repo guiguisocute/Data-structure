@@ -1,17 +1,17 @@
 /*
-  ±àĞ´¿ìËÙÄ£Ê½Æ¥ÅäKMPËã·¨£¬Çë½«Ïà¹Øº¯Êı²¹³äÍêÕû¡£
+  ç¼–å†™å¿«é€Ÿæ¨¡å¼åŒ¹é…KMPç®—æ³•ï¼Œè¯·å°†ç›¸å…³å‡½æ•°è¡¥å……å®Œæ•´ã€‚
 */ 
 #define maxsize 100
 typedef struct{
       char str[maxsize];
       int length ;
 } seqstring;
-/*ÇóÄ£Ê½pµÄnext[]Öµ£¬Çë½«º¯Êı²¹³äÍêÕû*/
+/*æ±‚æ¨¡å¼pçš„next[]å€¼ï¼Œè¯·å°†å‡½æ•°è¡¥å……å®Œæ•´*/
 void getnext(seqstring p,int next[])
 {
 
 }
-/*¿ìËÙÄ£Ê½Æ¥ÅäËã·¨£¬Çë½«º¯Êı²¹³äÍêÕû*/
+/*å¿«é€Ÿæ¨¡å¼åŒ¹é…ç®—æ³•ï¼Œè¯·å°†å‡½æ•°è¡¥å……å®Œæ•´*/
 int kmp(seqstring t,seqstring p,int next[])
 {
 
@@ -19,10 +19,10 @@ int kmp(seqstring t,seqstring p,int next[])
 int  main()
  {   seqstring t, p;
      int next[maxsize],pos;
-     printf("ÇëÊäÈëÖ÷´®£º\n");
+     printf("è¯·è¾“å…¥ä¸»ä¸²ï¼š\n");
      gets(t.str);
      t.length=strlen(t.str);
-     printf("ÇëÊäÈëÄ£Ê½´®£º\n");
+     printf("è¯·è¾“å…¥æ¨¡å¼ä¸²ï¼š\n");
      gets(p.str);
      p.length=strlen(p.str);
      getnext(p,next);

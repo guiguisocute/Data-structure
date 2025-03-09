@@ -1,13 +1,13 @@
 /*
-¼ÙÉèÊ÷²ÉÓÃÖ¸Õë·½Ê½µÄº¢×Ó±íÊ¾·¨´æ´¢½á¹¹£¬ÊÔ±àÐ´Ò»¸öº¯Êýtree Ct(char s[])£¬
-¸ù¾ÝÊäÈëµÄÊ÷µÄÀ¨ºÅ±íÊ¾×Ö·û´®s£¬Éú³ÉÊ÷µÄ´æ´¢½á¹¹¡£ÀýÈç£¬ÈôÒª½¨Á¢½Ì²ÄÍ¼6.4ËùÊ¾µÄÊ÷£¬
-Ó¦ÊäÈëA£¨B£¨E£¬F£©,C,D£¨G£¨I£¬J£¬K£©,H£©£©¡££¨ËµÃ÷£¬tree.hÖÐ¶¨ÒåµÄ³£Á¿m±íÊ¾Ê÷µÄ×î
-´ó¶È£¬Çë¸ù¾Ý½¨Ê÷µÄÐèÒª×ÔÐÐÐÞ¸ÄmµÄÖµ£©
+å‡è®¾æ ‘é‡‡ç”¨æŒ‡é’ˆæ–¹å¼çš„å­©å­è¡¨ç¤ºæ³•å­˜å‚¨ç»“æž„ï¼Œè¯•ç¼–å†™ä¸€ä¸ªå‡½æ•°tree Ct(char s[])ï¼Œ
+æ ¹æ®è¾“å…¥çš„æ ‘çš„æ‹¬å·è¡¨ç¤ºå­—ç¬¦ä¸²sï¼Œç”Ÿæˆæ ‘çš„å­˜å‚¨ç»“æž„ã€‚ä¾‹å¦‚ï¼Œè‹¥è¦å»ºç«‹æ•™æå›¾6.4æ‰€ç¤ºçš„æ ‘ï¼Œ
+åº”è¾“å…¥Aï¼ˆBï¼ˆEï¼ŒFï¼‰,C,Dï¼ˆGï¼ˆIï¼ŒJï¼ŒKï¼‰,Hï¼‰ï¼‰ã€‚ï¼ˆè¯´æ˜Žï¼Œtree.hä¸­å®šä¹‰çš„å¸¸é‡mè¡¨ç¤ºæ ‘çš„æœ€
+å¤§åº¦ï¼Œè¯·æ ¹æ®å»ºæ ‘çš„éœ€è¦è‡ªè¡Œä¿®æ”¹mçš„å€¼ï¼‰
 
 */
 
 #include "tree.h"
-/*Çë½«±¾º¯Êý²¹³äÍêÕû£¬²¢½øÐÐ²âÊÔ*/
+/*è¯·å°†æœ¬å‡½æ•°è¡¥å……å®Œæ•´ï¼Œå¹¶è¿›è¡Œæµ‹è¯•*/
 tree Ct(char s[MAXLEN])
 {
 
@@ -17,9 +17,9 @@ int main ()
 {
     char s[MAXLEN];
     tree root = NULL;
-    printf ("ÇëÓÃÊ÷µÄÀ¨ºÅ±íÊ¾·¨ÊäÈëÒ»¿ÃÊ÷:\n");
+    printf ("è¯·ç”¨æ ‘çš„æ‹¬å·è¡¨ç¤ºæ³•è¾“å…¥ä¸€æ£µæ ‘:\n");
     scanf ("%s",s);
     root = Ct(s);
-    preorder(root);  /*Ç°Ðò±éÀúÊ÷*/
+    preorder(root);  /*å‰åºéåŽ†æ ‘*/
     return 0;
 }

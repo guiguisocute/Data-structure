@@ -3,8 +3,8 @@
 #include <time.h>
 #define MAX 500000 
 
-/*´ÓÎÄ¼şÖĞ¶ÁÈëÊı¾İ´æÈëÊı×éa*/
-int readData(int a[], int n,char *f )  /*º¯Êı·µ»Ø³É¹¦¶ÁÈëµÄÊı¾İ¸öÊı*/
+/*ä»æ–‡ä»¶ä¸­è¯»å…¥æ•°æ®å­˜å…¥æ•°ç»„a*/
+int readData(int a[], int n,char *f )  /*å‡½æ•°è¿”å›æˆåŠŸè¯»å…¥çš„æ•°æ®ä¸ªæ•°*/
 {
     FILE *fp;
     int i;
@@ -19,13 +19,13 @@ int readData(int a[], int n,char *f )  /*º¯Êı·µ»Ø³É¹¦¶ÁÈëµÄÊı¾İ¸öÊı*/
     }
 }
 
-/*´æÅÌº¯Êı*/
+/*å­˜ç›˜å‡½æ•°*/
 void saveData(int a[],int n, char *f )
 {
     FILE *fp;
     int i;
     fp=fopen(f,"w");
-    if (fp==NULL)   printf("ÎÄ¼ş½¨Á¢Ê§°Ü£¡");
+    if (fp==NULL)   printf("æ–‡ä»¶å»ºç«‹å¤±è´¥ï¼");
     else
     {
         for (i=0;i<n;i++)
@@ -37,10 +37,10 @@ void saveData(int a[],int n, char *f )
 }
 
 
-/*Êä³ö³¤¶ÈÎªnµÄÕûĞÍÊı×é*/
+/*è¾“å‡ºé•¿åº¦ä¸ºnçš„æ•´å‹æ•°ç»„*/
 void output(int a[],int n)
 {  int i;
-   printf("\nÊı×éµÄÄÚÈİÊÇ£º\n");
+   printf("\næ•°ç»„çš„å†…å®¹æ˜¯ï¼š\n");
    for (i=0;i<n;i++)
      { if (i%10==0) printf("\n");
 	   printf("%7d",a[i]);

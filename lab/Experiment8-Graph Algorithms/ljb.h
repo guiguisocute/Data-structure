@@ -1,30 +1,30 @@
 /*********************************************/
-/*    ÁÚ½Ó±í´æ´¢½á¹¹   ÎÄ¼şÃû£ºljb.h     	 */
+/*    é‚»æ¥è¡¨å­˜å‚¨ç»“æ„   æ–‡ä»¶åï¼šljb.h     	 */
 /*********************************************/
 
 #include <stdio.h>
 #include <stdlib.h>
-#define M 20					/*Ô¤¶¨ÒåÍ¼µÄ×î´ó¶¥µãÊı*/
-typedef char DataType;  /*¶¥µãĞÅÏ¢Êı¾İÀàĞÍ*/
-typedef struct node{    /*±ß±í½áµã*/
-   int adjvex;                  /*ÁÚ½Óµã*/
+#define M 20					/*é¢„å®šä¹‰å›¾çš„æœ€å¤§é¡¶ç‚¹æ•°*/
+typedef char DataType;  /*é¡¶ç‚¹ä¿¡æ¯æ•°æ®ç±»å‹*/
+typedef struct node{    /*è¾¹è¡¨ç»“ç‚¹*/
+   int adjvex;                  /*é‚»æ¥ç‚¹*/
    struct node *next;
 }EdgeNode;
 
-typedef struct vnode{   /*Í·½áµãÀàĞÍ*/
-   DataType vertex;         /*¶¥µãĞÅÏ¢*/
-   EdgeNode *FirstEdge; /*ÁÚ½ÓÁ´±íÍ·Ö¸Õë*/
+typedef struct vnode{   /*å¤´ç»“ç‚¹ç±»å‹*/
+   DataType vertex;         /*é¡¶ç‚¹ä¿¡æ¯*/
+   EdgeNode *FirstEdge; /*é‚»æ¥é“¾è¡¨å¤´æŒ‡é’ˆ*/
 }VertexNode;
 
-typedef struct{           /*ÁÚ½Ó±íÀàĞÍ*/
- VertexNode adjlist[M];  /*´æ·ÅÍ·½áµãµÄË³Ğò±í*/
- int n,e;                 /*Í¼µÄ¶¥µãÊıÓë±ßÊı*/
+typedef struct{           /*é‚»æ¥è¡¨ç±»å‹*/
+ VertexNode adjlist[M];  /*å­˜æ”¾å¤´ç»“ç‚¹çš„é¡ºåºè¡¨*/
+ int n,e;                 /*å›¾çš„é¡¶ç‚¹æ•°ä¸è¾¹æ•°*/
 }LinkedGraph;
 
 
-/*º¯Êı¹¦ÄÜ£º½¨Á¢Í¼µÄÁÚ½Ó±í
-  º¯Êı²ÎÊı£ºÁÚ½Ó±íÖ¸Õë±äÁ¿g£»´æ·ÅÍ¼ĞÅÏ¢µÄÎÄ¼şÃûfilename;Í¼µÄÀàĞÍ²ÎÊıc£¬c=0±íÊ¾½¨Á¢ÎŞÏòÍ¼£¬·ñÔò±íÊ¾½¨Á¢ÓĞÏòÍ¼ 
-  º¯Êı·µ»ØÖµ£ºÎŞ
+/*å‡½æ•°åŠŸèƒ½ï¼šå»ºç«‹å›¾çš„é‚»æ¥è¡¨
+  å‡½æ•°å‚æ•°ï¼šé‚»æ¥è¡¨æŒ‡é’ˆå˜é‡gï¼›å­˜æ”¾å›¾ä¿¡æ¯çš„æ–‡ä»¶åfilename;å›¾çš„ç±»å‹å‚æ•°cï¼Œc=0è¡¨ç¤ºå»ºç«‹æ— å‘å›¾ï¼Œå¦åˆ™è¡¨ç¤ºå»ºç«‹æœ‰å‘å›¾ 
+  å‡½æ•°è¿”å›å€¼ï¼šæ— 
 */ 
 void creat(LinkedGraph *g,char *filename,int c)
     { int i,j,k;
@@ -33,27 +33,27 @@ void creat(LinkedGraph *g,char *filename,int c)
       fp=fopen(filename,"r");
       if (fp)
       {
-      fscanf(fp,"%d%d",&g->n,&g->e);              /*¶ÁÈë¶¥µãÊıÓë±ßÊı*/
+      fscanf(fp,"%d%d",&g->n,&g->e);              /*è¯»å…¥é¡¶ç‚¹æ•°ä¸è¾¹æ•°*/
     
       for(i=0;i<g->n;i++)
        {
-            fscanf(fp,"%1s",&g->adjlist[i].vertex);    /*¶ÁÈë¶¥µãĞÅÏ¢*/
-            g->adjlist[i].FirstEdge=NULL;         /*±ß±íÖÃÎª¿Õ±í*/
+            fscanf(fp,"%1s",&g->adjlist[i].vertex);    /*è¯»å…¥é¡¶ç‚¹ä¿¡æ¯*/
+            g->adjlist[i].FirstEdge=NULL;         /*è¾¹è¡¨ç½®ä¸ºç©ºè¡¨*/
        }
   
-      for(k=0;k<g->e;k++)                     /*Ñ­»·e´Î½¨Á¢±ß±í*/
+      for(k=0;k<g->e;k++)                     /*å¾ªç¯eæ¬¡å»ºç«‹è¾¹è¡¨*/
         {
-            fscanf(fp,"%d%d",&i,&j);                 /*ÊäÈëÎŞĞò¶Ô£¨i,j£©*/
+            fscanf(fp,"%d%d",&i,&j);                 /*è¾“å…¥æ— åºå¯¹ï¼ˆi,jï¼‰*/
             s=(EdgeNode *)malloc(sizeof(EdgeNode));
-            s->adjvex=j;                         /*ÁÚ½ÓµãĞòºÅÎªj*/
+            s->adjvex=j;                         /*é‚»æ¥ç‚¹åºå·ä¸ºj*/
             s->next=g->adjlist[i].FirstEdge;
-            g->adjlist[i].FirstEdge=s;           /*½«ĞÂ½áµã*s²åÈë¶¥µãviµÄ±ß±íÍ·²¿*/
-            if (c==0)                            /*ÎŞÏòÍ¼*/ 
+            g->adjlist[i].FirstEdge=s;           /*å°†æ–°ç»“ç‚¹*sæ’å…¥é¡¶ç‚¹viçš„è¾¹è¡¨å¤´éƒ¨*/
+            if (c==0)                            /*æ— å‘å›¾*/ 
             {
             s=(EdgeNode *)malloc(sizeof(EdgeNode));
-            s->adjvex=i;                         /*ÁÚ½ÓµãĞòºÅÎªi*/
+            s->adjvex=i;                         /*é‚»æ¥ç‚¹åºå·ä¸ºi*/
             s->next=g->adjlist[j].FirstEdge;
-            g->adjlist[j].FirstEdge=s;           /*½«ĞÂ½áµã*s²åÈë¶¥µãvjµÄ±ß±íÍ·²¿*/
+            g->adjlist[j].FirstEdge=s;           /*å°†æ–°ç»“ç‚¹*sæ’å…¥é¡¶ç‚¹vjçš„è¾¹è¡¨å¤´éƒ¨*/
 			}
         }
     fclose(fp);
@@ -61,7 +61,7 @@ void creat(LinkedGraph *g,char *filename,int c)
     else
     g->n=0;
    }
-/*---º¯Êıprint():Êä³öÁÚ½Ó±í´æ´¢½á¹¹---*/
+/*---å‡½æ•°print():è¾“å‡ºé‚»æ¥è¡¨å­˜å‚¨ç»“æ„---*/
 void print(LinkedGraph  g)
 {  EdgeNode *p;
    int i;

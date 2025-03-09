@@ -1,32 +1,32 @@
 /*
-ÇëÉè¼Æ¹é²¢ÅÅÐòËã·¨º¯Êývoid mergeSort(int a[],int n)£¬¶Ôa[1]..a[n]½øÐÐÉýÐòÅÅÐò¡£
-²¢²âÊÔÔÚ²»Í¬Êý¾Ý¹æÄ£ÏÂµÄÅÅÐòÐ§ÂÊ¡£
+è¯·è®¾è®¡å½’å¹¶æŽ’åºç®—æ³•å‡½æ•°void mergeSort(int a[],int n)ï¼Œå¯¹a[1]..a[n]è¿›è¡Œå‡åºæŽ’åºã€‚
+å¹¶æµ‹è¯•åœ¨ä¸åŒæ•°æ®è§„æ¨¡ä¸‹çš„æŽ’åºæ•ˆçŽ‡ã€‚
 */
 #include "Arrayio.h"
-#define N 10000     /*NÎªÊý¾ÝÁ¿´óÐ¡£¬Òòdata1.txtÖÐÖ»ÓÐ50Íò¸öÊý£¬ËùÒÔ×ÔÐÐÉè¶¨NÖµÊ±ÐèÈÃN<=500000*/
+#define N 10000     /*Nä¸ºæ•°æ®é‡å¤§å°ï¼Œå› data1.txtä¸­åªæœ‰50ä¸‡ä¸ªæ•°ï¼Œæ‰€ä»¥è‡ªè¡Œè®¾å®šNå€¼æ—¶éœ€è®©N<=500000*/
 
-/*Çë½«±¾º¯Êý²¹³äÍêÕû£¬²¢½øÐÐ²âÊÔ*/
+/*è¯·å°†æœ¬å‡½æ•°è¡¥å……å®Œæ•´ï¼Œå¹¶è¿›è¡Œæµ‹è¯•*/
 
 void merge(int a[],int u,int m,int v)
-{ /*½«ÓÐÐò¶Îa[u..m],a[m+1..v]¹é²¢µ½a[u..v]*/
+{ /*å°†æœ‰åºæ®µa[u..m],a[m+1..v]å½’å¹¶åˆ°a[u..v]*/
 
 }
 
 
-/*----Ò»ÌË¹é²¢------*/
+/*----ä¸€è¶Ÿå½’å¹¶------*/
  int  mergepass(int a[],int n,int len)
-  { /*¶Ôa[1..n]½øÐÐ³¤¶ÈÎªlenµÄÒ»ÌË²¢¹é*/
+  { /*å¯¹a[1..n]è¿›è¡Œé•¿åº¦ä¸ºlençš„ä¸€è¶Ÿå¹¶å½’*/
 
 
   }
 
-/*----¹é²¢ÅÅÐò------*/
+/*----å½’å¹¶æŽ’åº------*/
 void mergeSort(int a[],int n)
 {
 
 }
 
-/*¹é²¢ÅÅÐòµÄµÝ¹éÊµÏÖ*/
+/*å½’å¹¶æŽ’åºçš„é€’å½’å®žçŽ°*/
 void mergeSortdc(int a[],int low,int high)
 {
 
@@ -34,12 +34,12 @@ void mergeSortdc(int a[],int low,int high)
 
 int  main()
 {
-  int a[N+1],n;                     /*Êý¾Ý´æ´¢ÔÚa[1]...a[N]ÖÐ*/
-  printf("Êý¾Ý³õÊ¼»¯...\n");
-  n=readData(a,N,"data1.txt");      /*´Ódata1.txtÖÐ¶ÁÈëN¸öÕûÊý´æÈëÊý×éa£¬nÎªÊµ¼Ê¶ÁÈëµÄÊý¾Ý¸öÊý*/
-  printf("%d¸öÊý¾ÝÅÅÐòÖÐ...\n",n);
-  mergeSort(a,n);                   /* »òµ÷ÓÃmergeSortdc(a,1,n); */
-  saveData(a,n,"out.txt");          /*ÅÅÐò½á¹û´æ·ÅÔÚout.txtÎÄ¼þÖÐ*/
-  printf("ÅÅÐò½áÊø£¬ÅÅÐò½á¹û±£´æÔÚout.txtÎÄ¼þÖÐ¡£\n");
+  int a[N+1],n;                     /*æ•°æ®å­˜å‚¨åœ¨a[1]...a[N]ä¸­*/
+  printf("æ•°æ®åˆå§‹åŒ–...\n");
+  n=readData(a,N,"data1.txt");      /*ä»Ždata1.txtä¸­è¯»å…¥Nä¸ªæ•´æ•°å­˜å…¥æ•°ç»„aï¼Œnä¸ºå®žé™…è¯»å…¥çš„æ•°æ®ä¸ªæ•°*/
+  printf("%dä¸ªæ•°æ®æŽ’åºä¸­...\n",n);
+  mergeSort(a,n);                   /* æˆ–è°ƒç”¨mergeSortdc(a,1,n); */
+  saveData(a,n,"out.txt");          /*æŽ’åºç»“æžœå­˜æ”¾åœ¨out.txtæ–‡ä»¶ä¸­*/
+  printf("æŽ’åºç»“æŸï¼ŒæŽ’åºç»“æžœä¿å­˜åœ¨out.txtæ–‡ä»¶ä¸­ã€‚\n");
   return 0;
 }

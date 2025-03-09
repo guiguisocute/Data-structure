@@ -1,6 +1,6 @@
 /*
-¼ÙÉèÊ÷²ÉÓÃÖ¸Õë·½Ê½µÄº¢×Ó±íÊ¾·¨±íÊ¾£¬ÊÔ±àÐ´Ò»¸öº¯Êýint equal(tree t1, tree t2)£¬
-ÅÐ¶ÏÁ½¿Ã¸ø¶¨µÄÊ÷ÊÇ·ñµÈ¼Û£¨Á½¿ÃÊ÷µÈ¼Ûµ±ÇÒ½öµ±Æä¸ù½áµãµÄÖµÏàµÈÇÒÆä¶ÔÓ¦µÄ×ÓÊ÷¾ùÏà»¥µÈ¼Û£©¡£
+å‡è®¾æ ‘é‡‡ç”¨æŒ‡é’ˆæ–¹å¼çš„å­©å­è¡¨ç¤ºæ³•è¡¨ç¤ºï¼Œè¯•ç¼–å†™ä¸€ä¸ªå‡½æ•°int equal(tree t1, tree t2)ï¼Œ
+åˆ¤æ–­ä¸¤æ£µç»™å®šçš„æ ‘æ˜¯å¦ç­‰ä»·ï¼ˆä¸¤æ£µæ ‘ç­‰ä»·å½“ä¸”ä»…å½“å…¶æ ¹ç»“ç‚¹çš„å€¼ç›¸ç­‰ä¸”å…¶å¯¹åº”çš„å­æ ‘å‡ç›¸äº’ç­‰ä»·ï¼‰ã€‚
 */
 #include "tree.h"
 #define TRUE  1
@@ -21,11 +21,11 @@ int main ()
     t2=createtree();
     if ( equal(t1,t2) == TRUE)
     {
-  	printf ("Á½Ê÷ÏàµÈ\n");
+  	printf ("ä¸¤æ ‘ç›¸ç­‰\n");
     }
     else
     {
-	printf ("Á½Ê÷²»ÏàµÈ\n");
+	printf ("ä¸¤æ ‘ä¸ç›¸ç­‰\n");
     }
     return 0;
 }

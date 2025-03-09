@@ -1,17 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h> 
-/*¶Ô³¤¶ÈÎªnµÄÕûĞÍÊı×é×÷ÊäÈë*/
+/*å¯¹é•¿åº¦ä¸ºnçš„æ•´å‹æ•°ç»„ä½œè¾“å…¥*/
 void input( int a[],int n)
 {   int i;
-   printf("ÇëÊäÈë %d ¸öÕûÊı£º\n",n);
+   printf("è¯·è¾“å…¥ %d ä¸ªæ•´æ•°ï¼š\n",n);
    for (i=0;i<n;i++)
       scanf("%d",&a[i]);
 }
-/*Êä³ö³¤¶ÈÎªnµÄÕûĞÍÊı×é*/
+/*è¾“å‡ºé•¿åº¦ä¸ºnçš„æ•´å‹æ•°ç»„*/
 void print(int a[ ],int n)
 {  int i;
-   printf("\nÊı×éµÄÄÚÈİÊÇ£º\n");
+   printf("\næ•°ç»„çš„å†…å®¹æ˜¯ï¼š\n");
    for (i=0;i<n;i++)
      { if (i%10==0) printf("\n");
 	   printf("%6d",a[i]);

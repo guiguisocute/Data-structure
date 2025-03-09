@@ -1,10 +1,10 @@
 /*
-±àĞ´º¯Êıbintree prelist(bintree t)£¬bintree postfirst(bintree t)£¬
-·Ö±ğ·µ»Ø¶ş²æÊ÷tÔÚÇ°Ğò±éÀúÏÂµÄ×îºóÒ»¸ö½áµãµØÖ·ºÍºóĞò±éÀúÏÂµÄµÚÒ»¸ö½áµãµØÖ·¡£
+ç¼–å†™å‡½æ•°bintree prelist(bintree t)ï¼Œbintree postfirst(bintree t)ï¼Œ
+åˆ†åˆ«è¿”å›äºŒå‰æ ‘tåœ¨å‰åºéå†ä¸‹çš„æœ€åä¸€ä¸ªç»“ç‚¹åœ°å€å’Œååºéå†ä¸‹çš„ç¬¬ä¸€ä¸ªç»“ç‚¹åœ°å€ã€‚
 */ 
 
 #include "bintree.h"
-char *a="ABC##D##EF#G###";  /*À©³ä¶ş²æÊ÷ĞòÊ÷tµÄÇ°ĞòĞòÁĞ*/
+char *a="ABC##D##EF#G###";  /*æ‰©å……äºŒå‰æ ‘åºæ ‘tçš„å‰åºåºåˆ—*/
 bintree prelast(bintree t)
 {
 
@@ -16,14 +16,14 @@ bintree postfirst(bintree t)
 
 int main()
 {   bintree t,p,q;
-    t=creatbintree();   	/*½¨Á¢¶ş²æÊ÷tµÄ´æ´¢½á¹¹*/
+    t=creatbintree();   	/*å»ºç«‹äºŒå‰æ ‘tçš„å­˜å‚¨ç»“æ„*/
     p=prelast(t);
 	q=postfirst(t);
 	if (t!=NULL)
-            {   printf("Ç°Ğò±éÀú×îºóÒ»¸ö½áµãÎª£º%c\n",p->data);
-			    printf("ºóĞò±éÀúµÚÒ»¸ö½áµãÎª£º%c\n",q->data);
+            {   printf("å‰åºéå†æœ€åä¸€ä¸ªç»“ç‚¹ä¸ºï¼š%c\n",p->data);
+			    printf("ååºéå†ç¬¬ä¸€ä¸ªç»“ç‚¹ä¸ºï¼š%c\n",q->data);
             }
-	 else	printf("¶ş²æÊ÷Îª¿Õ£¡");
+	 else	printf("äºŒå‰æ ‘ä¸ºç©ºï¼");
     return 0;
 }
 

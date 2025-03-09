@@ -1,5 +1,5 @@
 /*
-¼ÙÉèÊ÷²ÉÓÃÖ¸Õë·½Ê½µÄº¢×Ó±íÊ¾·¨±íÊ¾£¬ÊÔ±àĞ´Ò»¸ö·Çµİ¹éº¯Êıvoid PreOrder1(tree root)£¬ÊµÏÖÊ÷µÄÇ°Ğò±éÀúËã·¨¡£
+å‡è®¾æ ‘é‡‡ç”¨æŒ‡é’ˆæ–¹å¼çš„å­©å­è¡¨ç¤ºæ³•è¡¨ç¤ºï¼Œè¯•ç¼–å†™ä¸€ä¸ªéé€’å½’å‡½æ•°void PreOrder1(tree root)ï¼Œå®ç°æ ‘çš„å‰åºéå†ç®—æ³•ã€‚
 */ 
 #include "tree.h"
 void  PreOrder1(tree root)
@@ -11,7 +11,7 @@ int main ()
         tree root;
         printf("please input the preorder sequence of the tree:\n");
         root =createtree();
-        printf("Ç°ĞòĞòÁĞÊÇ£º\n");
+        printf("å‰åºåºåˆ—æ˜¯ï¼š\n");
         PreOrder1(root);
         return 0;
 }

@@ -1,9 +1,9 @@
-/*Éè¼ÆÒ»¸öµÝ¹éËã·¨£¬´Ó´óµ½Ð¡Êä³ö¶þ²æÅÅÐòÊ÷ÖÐËùÓÐ¹Ø¼ü×Ö²»Ð¡ÓÚkµÄ½áµãÖµ¡£
+/*è®¾è®¡ä¸€ä¸ªé€’å½’ç®—æ³•ï¼Œä»Žå¤§åˆ°å°è¾“å‡ºäºŒå‰æŽ’åºæ ‘ä¸­æ‰€æœ‰å…³é”®å­—ä¸å°äºŽkçš„ç»“ç‚¹å€¼ã€‚
 */
 #include "bstree.h"
 
 /*
-    º¯ÊýoutPut(t,k)µÄ¹¦ÄÜÊÇ´Ó´óµ½Ð¡Êä³ö¶þ²æÅÅÐòÊ÷ÖÐËùÓÐ¹Ø¼ü×Ö²»Ð¡ÓÚkµÄ½áµãÖµ£¬Çë½«±¾º¯Êý²¹³äÍêÕû¡£
+    å‡½æ•°outPut(t,k)çš„åŠŸèƒ½æ˜¯ä»Žå¤§åˆ°å°è¾“å‡ºäºŒå‰æŽ’åºæ ‘ä¸­æ‰€æœ‰å…³é”®å­—ä¸å°äºŽkçš„ç»“ç‚¹å€¼ï¼Œè¯·å°†æœ¬å‡½æ•°è¡¥å……å®Œæ•´ã€‚
 */
 void outPut(bstree t,int k)
 {
@@ -14,11 +14,11 @@ int  main()
   {
     int k;
     bstree t;
-    printf("±¾³ÌÐò´Ó´óµ½Ð¡Êä³ö¶þ²æÅÅÐòÊ÷ÖÐËùÓÐ¹Ø¼ü×Ö²»Ð¡ÓÚkµÄ½áµãÖµ¡£\n");
-    t=creatBstree();         /*´´½¨¶þ²æÅÅÐòÊ÷*/
-    printf("ÇëÊäÈëkµÄÖµ£º");
+    printf("æœ¬ç¨‹åºä»Žå¤§åˆ°å°è¾“å‡ºäºŒå‰æŽ’åºæ ‘ä¸­æ‰€æœ‰å…³é”®å­—ä¸å°äºŽkçš„ç»“ç‚¹å€¼ã€‚\n");
+    t=creatBstree();         /*åˆ›å»ºäºŒå‰æŽ’åºæ ‘*/
+    printf("è¯·è¾“å…¥kçš„å€¼ï¼š");
     scanf("%d",&k);
-    printf("Êä³ö½á¹û£º\n");
+    printf("è¾“å‡ºç»“æžœï¼š\n");
     outPut(t,k);
     return 0;
  }

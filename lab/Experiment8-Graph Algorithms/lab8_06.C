@@ -1,45 +1,45 @@
 /***************************************/
-/*             ÍØÆËÅÅĞòËã·¨            */
+/*             æ‹“æ‰‘æ’åºç®—æ³•            */
 /***************************************/
 #include<stdlib.h>
 #include<stdio.h>
 #define M 20
 typedef char vertextype;
-typedef struct node{      /*±ß½áµãÀàĞÍ¶¨Òå*/
+typedef struct node{      /*è¾¹ç»“ç‚¹ç±»å‹å®šä¹‰*/
       int adjvex;
       struct node *next;
   }edgenode;
-typedef struct de         /*´ø¶¥µãÈë¶ÈµÄÍ·½áµã¶¨Òå*/
+typedef struct de         /*å¸¦é¡¶ç‚¹å…¥åº¦çš„å¤´ç»“ç‚¹å®šä¹‰*/
   {
    edgenode* FirstEdge;
    vertextype vertex;
-   int id;                /*¶¥µãµÄÈë¶ÈÓò*/
+   int id;                /*é¡¶ç‚¹çš„å…¥åº¦åŸŸ*/
   }vertexnode;
 
-typedef struct{           /*AOVÍøÂçµÄÁÚ½Ó±í½á¹¹*/
+typedef struct{           /*AOVç½‘ç»œçš„é‚»æ¥è¡¨ç»“æ„*/
       vertexnode adjlist[M];
       int n,e;
       }AovGraph;
 
-void  creat(AovGraph *g,char *filename)       /*½¨Á¢AOVÍøÂçµÄ´æ´¢½á¹¹*/
+void  creat(AovGraph *g,char *filename)       /*å»ºç«‹AOVç½‘ç»œçš„å­˜å‚¨ç»“æ„*/
  { int i,j,k;
    edgenode  *s;
    FILE *fp;
    fp=fopen(filename,"r");
    if (fp)
    {
-   fscanf(fp,"%d%d",&g->n,&g->e);  /*ÊäÈëÍ¼ÖĞµÄ¶¥µãÊıÓë±ßÊı*/
+   fscanf(fp,"%d%d",&g->n,&g->e);  /*è¾“å…¥å›¾ä¸­çš„é¡¶ç‚¹æ•°ä¸è¾¹æ•°*/
 
-   for(i=0;i<g->n;i++)                        /*ÊäÈë¶¥µãÖµ*/
+   for(i=0;i<g->n;i++)                        /*è¾“å…¥é¡¶ç‚¹å€¼*/
       {fscanf(fp,"%1s",&g->adjlist[i].vertex);
        g->adjlist[i].FirstEdge=NULL;
-       g->adjlist[i].id=0;       /*Èë¶È³õÊ¼»¯Îª0*/
+       g->adjlist[i].id=0;       /*å…¥åº¦åˆå§‹åŒ–ä¸º0*/
       }
    for(k=0;k<g->e;k++)
         { fscanf(fp,"%d%d",&i,&j);
          s=(edgenode*)malloc(sizeof(edgenode));
          s->adjvex=j;
-         g->adjlist[j].id++;    /*¶¥µãjµÄÈë¶È¼Ó1*/
+         g->adjlist[j].id++;    /*é¡¶ç‚¹jçš„å…¥åº¦åŠ 1*/
          s->next=g->adjlist[i].FirstEdge;
          g->adjlist[i].FirstEdge=s;
         }
@@ -59,32 +59,32 @@ void print(AovGraph g)
      printf("\n");
    }
 }
-/*º¯Êı¹¦ÄÜ£ºÍØÆËÅÅĞò
-º¯Êı²ÎÊı£ºAOVÍøÁÚ½Ó±í´æ´¢½á¹¹±äÁ¿g
-º¯Êı·µ»ØÖµ£ºÍØÆËÅÅĞòÊä³öµÄ¶¥µã¸öÊı
+/*å‡½æ•°åŠŸèƒ½ï¼šæ‹“æ‰‘æ’åº
+å‡½æ•°å‚æ•°ï¼šAOVç½‘é‚»æ¥è¡¨å­˜å‚¨ç»“æ„å˜é‡g
+å‡½æ•°è¿”å›å€¼ï¼šæ‹“æ‰‘æ’åºè¾“å‡ºçš„é¡¶ç‚¹ä¸ªæ•°
 */
 int TopSort(AovGraph g)
  {int k=0,i,j,v, flag[M];
-   int queue[M];  /*¶ÓÁĞ*/
+   int queue[M];  /*é˜Ÿåˆ—*/
    int h=0,t=0;
    edgenode* p;
-   for (i=0;i<g.n;i++)  flag[i]=0;  /*·ÃÎÊ±ê¼Ç³õÊ¼»¯*/
-    /*ÏÈ½«ËùÓĞÈë¶ÈÎª0µÄ½áµã½ø¶Ó*/
-    /*½«³ÌĞò²¹³äÍêÕû*/
+   for (i=0;i<g.n;i++)  flag[i]=0;  /*è®¿é—®æ ‡è®°åˆå§‹åŒ–*/
+    /*å…ˆå°†æ‰€æœ‰å…¥åº¦ä¸º0çš„ç»“ç‚¹è¿›é˜Ÿ*/
+    /*å°†ç¨‹åºè¡¥å……å®Œæ•´*/
 
 
 
 
 
-    return k;  //·µ»ØÊä³öµÄ¶¥µã¸öÊı
+    return k;  //è¿”å›è¾“å‡ºçš„é¡¶ç‚¹ä¸ªæ•°
  }
 int main()
 { int k=0;
   AovGraph g;
-  creat(&g,"aov.txt");    /*¼ÙÉèÍ¼8.25ËùÊ¾µÄAOVÍøÊäÈëÎÄ¼şÎªaov.txt*/
-  printf("\nÍ¼8.27ËùÊ¾AOVÍøµÄÁÚ½Ó±íÊÇ£º\n");
+  creat(&g,"aov.txt");    /*å‡è®¾å›¾8.25æ‰€ç¤ºçš„AOVç½‘è¾“å…¥æ–‡ä»¶ä¸ºaov.txt*/
+  printf("\nå›¾8.27æ‰€ç¤ºAOVç½‘çš„é‚»æ¥è¡¨æ˜¯ï¼š\n");
   print(g);
   k=TopSort(g);
-  if(k<g.n) printf("\n¸ÃÍ¼´æÔÚ»·£¡\n");
+  if(k<g.n) printf("\nè¯¥å›¾å­˜åœ¨ç¯ï¼\n");
   return 0;
 }

@@ -1,9 +1,9 @@
 /*
-  ±àĞ´µİ¹éËã·¨int max(int a[],int left, int right)£¬ÇóÊı×éa[left..right]ÖĞµÄ×î´óÊı¡£
+  ç¼–å†™é€’å½’ç®—æ³•int max(int a[],int left, int right)ï¼Œæ±‚æ•°ç»„a[left..right]ä¸­çš„æœ€å¤§æ•°ã€‚
 */
  
 #include "ArrayIo.h"
-/*Çë½«±¾º¯Êı²¹³äÍêÕû£¬²¢½øĞĞ²âÊÔ*/
+/*è¯·å°†æœ¬å‡½æ•°è¡¥å……å®Œæ•´ï¼Œå¹¶è¿›è¡Œæµ‹è¯•*/
 int max(int a[],int left,int right)
 {
 
@@ -12,6 +12,6 @@ int main()
 {   int a[10];
     input(a,10);
     print(a,10);
-    printf("Êı×éµÄ×î´óÊıÊÇ:%d\n",max(a,0,9));
+    printf("æ•°ç»„çš„æœ€å¤§æ•°æ˜¯:%d\n",max(a,0,9));
     return 0;
 }

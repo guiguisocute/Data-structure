@@ -7,15 +7,15 @@ typedef struct node
 }linknode;
 typedef linknode *linkstring;
 /**********************************/
-/*º¯ÊıÃû³Æ£ºcreat() 			      */
-/*º¯Êı¹¦ÄÜ£ºÎ²²å·¨½¨Á¢×Ö·ûµ¥Á´±í         */
+/*å‡½æ•°åç§°ï¼šcreat() 			      */
+/*å‡½æ•°åŠŸèƒ½ï¼šå°¾æ’æ³•å»ºç«‹å­—ç¬¦å•é“¾è¡¨         */
 /**********************************/
 linkstring creat()
 {   linkstring head,r,s;
     datatype x;
     head=r=(linkstring)malloc(sizeof(linknode));
     head->next=NULL;
-    printf("ÇëÊäÈëÒ»¸ö×Ö·û´®£¨ÒÔ»Ø³µ½áÊø£©:\n");
+    printf("è¯·è¾“å…¥ä¸€ä¸ªå­—ç¬¦ä¸²ï¼ˆä»¥å›è½¦ç»“æŸï¼‰:\n");
     scanf("%c",&x);
     while (x!='\n')
     {    s=(linkstring)malloc(sizeof(linknode));
@@ -28,8 +28,8 @@ linkstring creat()
     return head;
 }
 /**********************************/
-/*º¯ÊıÃû³Æ£ºprint() 			      */
-/*º¯Êı¹¦ÄÜ£ºÊä³ö×Ö·û´®                   */
+/*å‡½æ•°åç§°ï¼šprint() 			      */
+/*å‡½æ•°åŠŸèƒ½ï¼šè¾“å‡ºå­—ç¬¦ä¸²                   */
 /**********************************/
 void print(linkstring head)
 {   linkstring p;
@@ -42,7 +42,7 @@ void print(linkstring head)
     printf("\n");
 }
 
-/*ÊÍ·Åµ¥Á´±íµÄÄÚÈİ*/
+/*é‡Šæ”¾å•é“¾è¡¨çš„å†…å®¹*/
 void delList(linkstring head)
 {
   linkstring p=head;

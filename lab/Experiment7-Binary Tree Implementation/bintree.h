@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define N 100 
-extern char *a;     /*´æ·ÅÀ©³ä¶þ²æÊ÷µÄÇ°ÐòÐòÁÐ*/
-typedef struct node /*¶þ²æÊ÷½á¹¹¶¨Òå*/
+extern char *a;     /*å­˜æ”¾æ‰©å……äºŒå‰æ ‘çš„å‰åºåºåˆ—*/
+typedef struct node /*äºŒå‰æ ‘ç»“æž„å®šä¹‰*/
 {
     char data;
     struct node *lchild,*rchild;
 }binnode;
 typedef binnode *bintree;
 
-/*º¯Êýcreatbintree (¸ù¾ÝÀ©³ä¶þ²æÊ÷µÄÇ°ÐòÐòÁÐ(×Ö·û´®a)½¨Á¢¶þ²æÊ÷tµÄ´æ´¢½á¹¹*/
+/*å‡½æ•°creatbintree (æ ¹æ®æ‰©å……äºŒå‰æ ‘çš„å‰åºåºåˆ—(å­—ç¬¦ä¸²a)å»ºç«‹äºŒå‰æ ‘tçš„å­˜å‚¨ç»“æž„*/
 bintree  creatbintree()
 {
     char ch=*a++;
@@ -24,7 +24,7 @@ bintree  creatbintree()
     return t;
 }
 
-void preorder(bintree t)  /*Ç°ÐòµÝ¹é±éÀú¶þ²æÊ÷*/
+void preorder(bintree t)  /*å‰åºé€’å½’éåŽ†äºŒå‰æ ‘*/
 {
     if (t)
     {
@@ -33,7 +33,7 @@ void preorder(bintree t)  /*Ç°ÐòµÝ¹é±éÀú¶þ²æÊ÷*/
         preorder(t->rchild);
     }
 }
-void postorder(bintree t)  /*ºóÐòµÝ¹é±éÀú¶þ²æÊ÷*/
+void postorder(bintree t)  /*åŽåºé€’å½’éåŽ†äºŒå‰æ ‘*/
 {
     if (t)
     {
@@ -44,7 +44,7 @@ void postorder(bintree t)  /*ºóÐòµÝ¹é±éÀú¶þ²æÊ÷*/
     }
 }
 
-/*Ë³ÐòÕ»¶¨Òå*/
+/*é¡ºåºæ ˆå®šä¹‰*/
 typedef struct
 {
     bintree data[N];
@@ -52,26 +52,26 @@ typedef struct
     int tag[N];
 }seqstack;
 
-void init(seqstack *s)   /*³õÊ¼»¯¿ÕÕ»*/
+void init(seqstack *s)   /*åˆå§‹åŒ–ç©ºæ ˆ*/
 {
     s->top=-1;
 }
-int empty(seqstack *s)   /*ÅÐ¶ÏÕ»ÊÇ·ñÎª¿Õ*/
+int empty(seqstack *s)   /*åˆ¤æ–­æ ˆæ˜¯å¦ä¸ºç©º*/
 {
     if (s->top>-1) return 0;
     else return 1;
 }
-int full(seqstack *s)   /*ÅÐ¶ÏÕ»ÊÇ·ñÎªÂú*/
+int full(seqstack *s)   /*åˆ¤æ–­æ ˆæ˜¯å¦ä¸ºæ»¡*/
 {
     if (s->top==N-1) return 1;
     else return 0;
 }
-void push(seqstack *s ,bintree x)   /*½øÕ»*/
+void push(seqstack *s ,bintree x)   /*è¿›æ ˆ*/
 {
     if (!full(s))
         s->data[++s->top]=x;
 }
-bintree pop(seqstack *s)			/*³öÕ»*/
+bintree pop(seqstack *s)			/*å‡ºæ ˆ*/
 {
     if (!empty(s))
         return s->data[s->top--];

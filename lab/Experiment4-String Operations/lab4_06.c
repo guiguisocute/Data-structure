@@ -1,25 +1,25 @@
 /*
-×Ö·û´®²ÉÓÃ´øÍ·½áµãµÄÁ´±í´æ´¢£¬±àĞ´º¯Êılinkstring index(linkstring s, linkstring t)£¬
-²éÕÒ×Ó´®tÔÚÖ÷´®sÖĞµÚÒ»´Î³öÏÖµÄÎ»ÖÃ£¬ÈôÆ¥Åä²»³É¹¦£¬Ôò·µ»ØNULL¡£
+å­—ç¬¦ä¸²é‡‡ç”¨å¸¦å¤´ç»“ç‚¹çš„é“¾è¡¨å­˜å‚¨ï¼Œç¼–å†™å‡½æ•°linkstring index(linkstring s, linkstring t)ï¼Œ
+æŸ¥æ‰¾å­ä¸²tåœ¨ä¸»ä¸²sä¸­ç¬¬ä¸€æ¬¡å‡ºç°çš„ä½ç½®ï¼Œè‹¥åŒ¹é…ä¸æˆåŠŸï¼Œåˆ™è¿”å›NULLã€‚
 */ 
 
 #include "linkstring.h"
-/*Çë½«±¾º¯Êı²¹³äÍêÕû£¬²¢½øĞĞ²âÊÔ*/
+/*è¯·å°†æœ¬å‡½æ•°è¡¥å……å®Œæ•´ï¼Œå¹¶è¿›è¡Œæµ‹è¯•*/
 linkstring index(linkstring  s, linkstring t)
 {
 
 }
 int main()
 {   linkstring s,t,p=NULL;
-    s=creat();                  /*½¨Á¢Ö÷´®Á´±í*/
-    t=creat();			        /*½¨Á¢×Ó´®Á´±í*/
+    s=creat();                  /*å»ºç«‹ä¸»ä¸²é“¾è¡¨*/
+    t=creat();			        /*å»ºç«‹å­ä¸²é“¾è¡¨*/
     print(s);
     print(t);
     p=index(s,t);
     if(p)
-            printf("Æ¥Åä³É¹¦£¬Ê×´ÎÆ¥Åä³É¹¦µÄÎ»ÖÃ½áµãÖµÎª%c\n",p->data);
+            printf("åŒ¹é…æˆåŠŸï¼Œé¦–æ¬¡åŒ¹é…æˆåŠŸçš„ä½ç½®ç»“ç‚¹å€¼ä¸º%c\n",p->data);
     else
-            printf("Æ¥Åä²»³É¹¦£¡\n");
+            printf("åŒ¹é…ä¸æˆåŠŸï¼\n");
     delList(s);
     delList(t);
     return 0;

@@ -1,30 +1,30 @@
-/*×Ö·ûÕ»µÄ½á¹¹¶¨Òå¼°Æä²Ù×÷ÊµÏÖ*/
-#define seqstacksize  100      /*Õ»µÄ×î´ó¿Õ¼ä´óÐ¡*/
+/*å­—ç¬¦æ ˆçš„ç»“æž„å®šä¹‰åŠå…¶æ“ä½œå®žçŽ°*/
+#define seqstacksize  100      /*æ ˆçš„æœ€å¤§ç©ºé—´å¤§å°*/
 typedef char datatype; 
 typedef struct stack {
-    datatype  data[seqstacksize] ;  /*ÏòÁ¿dataÓÃÓÚ´æ´¢Õ»Êý¾Ý*/
-    int  top;                       /*Õ»¶¥Ö¸Ê¾*/
+    datatype  data[seqstacksize] ;  /*å‘é‡dataç”¨äºŽå­˜å‚¨æ ˆæ•°æ®*/
+    int  top;                       /*æ ˆé¡¶æŒ‡ç¤º*/
 }seqstack;
 
-void initstack(seqstack *s)         /*Õ»³õÊ¼»¯*/
+void initstack(seqstack *s)         /*æ ˆåˆå§‹åŒ–*/
 { s->top=-1;
 }
 
-int stackempty (seqstack *s)        /*ÅÐÕ»¿Õ*/
+int stackempty (seqstack *s)        /*åˆ¤æ ˆç©º*/
 { return s->top==-1;
 }
-int stackfull(seqstack *s)          /*ÅÐÕ»Âú*/
+int stackfull(seqstack *s)          /*åˆ¤æ ˆæ»¡*/
 {return s->top==seqstacksize-1;
 }
-/*½øÕ»*/
+/*è¿›æ ˆ*/
 void push(seqstack *s, datatype x)
   { s->data[++s->top]=x;
   }
-/*³öÕ»*/
+/*å‡ºæ ˆ*/
 datatype pop(seqstack *s)
 { return s->data[s->top--];
 }
-/*È¡Õ»¶¥Ôª*/
+/*å–æ ˆé¡¶å…ƒ*/
 datatype stacktop(seqstack *s)
 { return s->data[s->top];
 }

@@ -1,10 +1,10 @@
 /*
-±àĞ´Ëã·¨º¯Êıvoid levelorder(tree t)ÊµÏÖÊ÷µÄ²ã´Î±éÀú¡£
+ç¼–å†™ç®—æ³•å‡½æ•°void levelorder(tree t)å®ç°æ ‘çš„å±‚æ¬¡éå†ã€‚
 */
  
 #include "tree.h"
 
-void levelorder(tree t)    /* tÎªÖ¸ÏòÊ÷¸ù½áµãµÄÖ¸Õë*/
+void levelorder(tree t)    /* tä¸ºæŒ‡å‘æ ‘æ ¹ç»“ç‚¹çš„æŒ‡é’ˆ*/
 {
 
 }

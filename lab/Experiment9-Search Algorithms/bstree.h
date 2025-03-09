@@ -1,36 +1,36 @@
 /**************************************/
-/*         ¶þ²æÅÅÐòÊ÷ÓÃµÄÍ·ÎÄ¼þ         */
-/*          ÎÄ¼þÃû£ºbstree.h              */
+/*         äºŒå‰æŽ’åºæ ‘ç”¨çš„å¤´æ–‡ä»¶         */
+/*          æ–‡ä»¶åï¼šbstree.h              */
 /**************************************/
 #include<stdio.h>
 #include<stdlib.h>
-typedef struct node1            /*¶þ²æÅÅÐòÊ÷½áµã¶¨Òå*/
+typedef struct node1            /*äºŒå‰æŽ’åºæ ‘ç»“ç‚¹å®šä¹‰*/
  {
-  int key;                      /*½áµãÖµ*/
-  struct node1 *lchild,*rchild; /*×ó¡¢ÓÒº¢×ÓÖ¸Õë*/
+  int key;                      /*ç»“ç‚¹å€¼*/
+  struct node1 *lchild,*rchild; /*å·¦ã€å³å­©å­æŒ‡é’ˆ*/
   }bsnode;
 typedef bsnode *bstree;
 
 /*
-    º¯ÊýcreatBstree()¸ù¾ÝÊäÈëµÄ½áµãÐòÁÐ£¬½¨Á¢Ò»¿Ã¶þ²æÅÅÐòÊ÷£¬²¢·µ»Ø¸ù½áµãµÄµØÖ·
+    å‡½æ•°creatBstree()æ ¹æ®è¾“å…¥çš„ç»“ç‚¹åºåˆ—ï¼Œå»ºç«‹ä¸€æ£µäºŒå‰æŽ’åºæ ‘ï¼Œå¹¶è¿”å›žæ ¹ç»“ç‚¹çš„åœ°å€
 */
 bstree  creatBstree()
   {
         bstree t=NULL,parent,p,q;
         int i,flag,n,x;
 
-        printf("ÇëÊäÈëÄâ´´½¨µÄ¶þ²æÊ÷ÖÐµÄÊý¾Ý¸öÊý£º");
+        printf("è¯·è¾“å…¥æ‹Ÿåˆ›å»ºçš„äºŒå‰æ ‘ä¸­çš„æ•°æ®ä¸ªæ•°ï¼š");
         scanf("%d",&n);
 
         if (n>0)
         {
-                printf("ÇëÒÀ´ÎÊäÈë²åÈë¶þ²æÊ÷µÄ%d¸öÕûÊý£º\n",n);
+                printf("è¯·ä¾æ¬¡è¾“å…¥æ’å…¥äºŒå‰æ ‘çš„%dä¸ªæ•´æ•°ï¼š\n",n);
                 for (i=0;i<n;i++)
                 {       scanf("%d",&x);
                         parent=NULL;
                         p=t;
                         flag=0;
-                        while (p)           //±¾Ñ­»·ÓÃÓÚ²éÕÒ²åÈëÎ»ÖÃ
+                        while (p)           //æœ¬å¾ªçŽ¯ç”¨äºŽæŸ¥æ‰¾æ’å…¥ä½ç½®
                         {
                            if (p->key>x)
                            {
@@ -44,11 +44,11 @@ bstree  creatBstree()
                            }
                            else
                             {
-                                flag=1;         //ÕÒµ½ÏàÍ¬ÔªËØ
+                                flag=1;         //æ‰¾åˆ°ç›¸åŒå…ƒç´ 
                                 break;
                            }
                         }
-                        if (flag==0)            //Î´ÕÒµ½ÏàÍ¬ÔªËØ
+                        if (flag==0)            //æœªæ‰¾åˆ°ç›¸åŒå…ƒç´ 
                         {
                             q=(bstree)malloc(sizeof(bsnode));
                             q->key=x;
@@ -65,7 +65,7 @@ bstree  creatBstree()
         return t;
   }
 
-/*---ÖÐÐò±éÀú¶þ²æÅÅÐòÊ÷----*/
+/*---ä¸­åºéåŽ†äºŒå‰æŽ’åºæ ‘----*/
 void inorder(bstree t)
   { if (t) {
                 inorder(t->lchild);

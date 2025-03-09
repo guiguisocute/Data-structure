@@ -1,13 +1,13 @@
 /*
-ÊÔ±àĞ´Ò»¸öµİ¹éº¯Êıbintree buildBintree(char *pre, char *mid, int length)£¬
-¸ù¾İ¶ş²æÊ÷µÄÇ°ĞòĞòÁĞpre¡¢ÖĞĞòĞòÁĞmidºÍÇ°ĞòĞòÁĞ³¤¶Èlength£¬¹¹Ôì¶ş²æÊ÷µÄ¶ş²æÁ´±í´æ´¢½á¹¹£¬
-º¯Êı·µ»Ø¶ş²æÊ÷µÄÊ÷¸ùµØÖ·¡£
+è¯•ç¼–å†™ä¸€ä¸ªé€’å½’å‡½æ•°bintree buildBintree(char *pre, char *mid, int length)ï¼Œ
+æ ¹æ®äºŒå‰æ ‘çš„å‰åºåºåˆ—preã€ä¸­åºåºåˆ—midå’Œå‰åºåºåˆ—é•¿åº¦lengthï¼Œæ„é€ äºŒå‰æ ‘çš„äºŒå‰é“¾è¡¨å­˜å‚¨ç»“æ„ï¼Œ
+å‡½æ•°è¿”å›äºŒå‰æ ‘çš„æ ‘æ ¹åœ°å€ã€‚
 */ 
 
 #include "bintree.h"
 #include <string.h>
 char *a="";
-/*Çë½«±¾º¯Êı²¹³äÍêÕû£¬²¢½øĞĞ²âÊÔ*/
+/*è¯·å°†æœ¬å‡½æ•°è¡¥å……å®Œæ•´ï¼Œå¹¶è¿›è¡Œæµ‹è¯•*/
 bintree buildBintree(char *pre, char *mid,int length)
 {
 
@@ -15,12 +15,12 @@ bintree buildBintree(char *pre, char *mid,int length)
 int main()
 {   bintree root;
     char pre[100],mid[100];
-    puts("ÇëÊäÈëÇ°ĞòĞòÁĞ£º");
+    puts("è¯·è¾“å…¥å‰åºåºåˆ—ï¼š");
     gets(pre);
-    puts("ÇëÊäÈëÖĞĞòĞòÁĞ£º");
+    puts("è¯·è¾“å…¥ä¸­åºåºåˆ—ï¼š");
     gets(mid);
     root=buildBintree(pre,mid,strlen(pre));
-    puts("ºóĞòĞòÁĞÊÇ£º");
+    puts("ååºåºåˆ—æ˜¯ï¼š");
     postorder(root);
 }
 

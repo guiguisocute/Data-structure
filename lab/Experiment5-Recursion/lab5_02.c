@@ -1,17 +1,17 @@
 /*
-Çë±àĞ´Ò»¸öµİ¹éËã·¨º¯Êıvoid partion(int a[], int left, int right)£¬
-½«Êı×éa[left..right]ÖĞµÄËùÓĞÆæÊıµ÷Õûµ½±íµÄ×ó±ß£¬ËùÓĞÅ¼Êıµ÷Õûµ½±íµÄÓÒ±ß¡£
+è¯·ç¼–å†™ä¸€ä¸ªé€’å½’ç®—æ³•å‡½æ•°void partion(int a[], int left, int right)ï¼Œ
+å°†æ•°ç»„a[left..right]ä¸­çš„æ‰€æœ‰å¥‡æ•°è°ƒæ•´åˆ°è¡¨çš„å·¦è¾¹ï¼Œæ‰€æœ‰å¶æ•°è°ƒæ•´åˆ°è¡¨çš„å³è¾¹ã€‚
 */
 #include "ArrayIo.h" 
 #define N 10
-/*Çë½«±¾º¯Êı²¹³äÍêÕû£¬²¢½øĞĞ²âÊÔ*/
+/*è¯·å°†æœ¬å‡½æ•°è¡¥å……å®Œæ•´ï¼Œå¹¶è¿›è¡Œæµ‹è¯•*/
 void partion(int a[], int left,int right)
 {
 
 }
 int main()
 {   int a[N];
-    init(a,N);				/*Ëæ»ú²úÉúN¸öÊı*/
+    init(a,N);				/*éšæœºäº§ç”ŸNä¸ªæ•°*/
     print(a,N);
     partion(a,0,N-1);
     print(a,N);

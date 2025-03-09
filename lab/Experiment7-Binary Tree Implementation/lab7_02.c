@@ -1,17 +1,17 @@
 /*
-±àĞ´Ëã·¨º¯Êıvoid levelbintree(bintree t)£¬ÊµÏÖ¶ş²æÊ÷µÄ²ã´Î±éÀú¡£
+ç¼–å†™ç®—æ³•å‡½æ•°void levelbintree(bintree t)ï¼Œå®ç°äºŒå‰æ ‘çš„å±‚æ¬¡éå†ã€‚
 */
  
 #include "bintree.h"
-char *a="ABC##D#E##F##";  			/*À©³ä¶ş²æÊ÷ĞòÊ÷tµÄÇ°ĞòĞòÁĞ*/
+char *a="ABC##D#E##F##";  			/*æ‰©å……äºŒå‰æ ‘åºæ ‘tçš„å‰åºåºåˆ—*/
 void levelbintree(bintree t)
 {
 
 }
 int main()
 {   bintree t;
-    t=creatbintree();   	/*½¨Á¢¶ş²æÊ÷tµÄ´æ´¢½á¹¹*/
-    printf("¶ş²æÊ÷µÄ²ã´ÎĞòÁĞÎª£º\n");
-    levelbintree(t);       /*²ã´Î±éÀú¶ş²æÊ÷*/
+    t=creatbintree();   	/*å»ºç«‹äºŒå‰æ ‘tçš„å­˜å‚¨ç»“æ„*/
+    printf("äºŒå‰æ ‘çš„å±‚æ¬¡åºåˆ—ä¸ºï¼š\n");
+    levelbintree(t);       /*å±‚æ¬¡éå†äºŒå‰æ ‘*/
     return 0;
 }

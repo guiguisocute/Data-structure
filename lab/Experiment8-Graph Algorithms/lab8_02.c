@@ -1,30 +1,30 @@
 /*
-Í¼²ÉÓÃÁÚ½Ó±í´æ´¢½á¹¹£¬±à³Ì¶ÔÍ¼½øÐÐ¹ã¶ÈÓÅÏÈ±éÀú¡£
+å›¾é‡‡ç”¨é‚»æŽ¥è¡¨å­˜å‚¨ç»“æž„ï¼Œç¼–ç¨‹å¯¹å›¾è¿›è¡Œå¹¿åº¦ä¼˜å…ˆéåŽ†ã€‚
 */
 /**********************************/
-/*ÎÄ¼þÃû³Æ£ºlab8_02.c                 */
+/*æ–‡ä»¶åç§°ï¼šlab8_02.c                 */
 /**********************************/
 #include "ljb.h"
-int visited[M];  				/*È«¾Ö±êÖ¾ÏòÁ¿*/
-/*Çë½«±¾º¯Êý²¹³äÍêÕû£¬²¢½øÐÐ²âÊÔ*/
+int visited[M];  				/*å…¨å±€æ ‡å¿—å‘é‡*/
+/*è¯·å°†æœ¬å‡½æ•°è¡¥å……å®Œæ•´ï¼Œå¹¶è¿›è¡Œæµ‹è¯•*/
 void bfs(LinkedGraph g, int i)
-{ /*´Ó¶¥µãi³ö·¢¹ã¶ÈÓÅÏÈ±äÁ¿Í¼gµÄÁ¬Í¨·ÖÁ¿*/
+{ /*ä»Žé¡¶ç‚¹iå‡ºå‘å¹¿åº¦ä¼˜å…ˆå˜é‡å›¾gçš„è¿žé€šåˆ†é‡*/
 
 }
 
 
-/*º¯Êý¹¦ÄÜ£º¹ã¶ÈÓÅÏÈ±éÀúÍ¼g
-  º¯Êý²ÎÊý£ºÁÚ½Ó±íg
+/*å‡½æ•°åŠŸèƒ½ï¼šå¹¿åº¦ä¼˜å…ˆéåŽ†å›¾g
+  å‡½æ•°å‚æ•°ï¼šé‚»æŽ¥è¡¨g
 */
 int BfsTraverse(LinkedGraph g)
 {  int i,count=0;
    for (i=0;i<g.n;i++)
-       visited[i]=0;     /*³õÊ¼»¯±êÖ¾Êý×é*/
+       visited[i]=0;     /*åˆå§‹åŒ–æ ‡å¿—æ•°ç»„*/
 
    for (i=0;i<g.n;i++)
-       if (!visited[i])  /*viÎ´·ÃÎÊ¹ý*/
+       if (!visited[i])  /*viæœªè®¿é—®è¿‡*/
        {printf("\n");
-        count++;            /*Á¬Í¨·ÖÁ¿¸öÊý¼Ó1*/
+        count++;            /*è¿žé€šåˆ†é‡ä¸ªæ•°åŠ 1*/
         bfs(g,i);
        }
    return count;
@@ -33,12 +33,12 @@ int BfsTraverse(LinkedGraph g)
 int main()
 { 	  LinkedGraph g;
       int count;
-      creat(&g,"g11.txt",0);  		/*´´½¨Í¼µÄÁÚ½Ó±í*/
+      creat(&g,"g11.txt",0);  		/*åˆ›å»ºå›¾çš„é‚»æŽ¥è¡¨*/
       printf("\n The graph is:\n");
       print(g);
-      printf("¹ã¶ÈÓÅÏÈ±éÀúÐòÁÐÎª£º\n");
-      count=BfsTraverse(g);     	/*´Ó¶¥µã0³ö·¢¹ã¶ÈÓÅÏÈ±éÀúÍ¼g*/
-      printf("\n¸ÃÍ¼¹²ÓÐ%d¸öÁ¬Í¨·ÖÁ¿¡£\n",count);
+      printf("å¹¿åº¦ä¼˜å…ˆéåŽ†åºåˆ—ä¸ºï¼š\n");
+      count=BfsTraverse(g);     	/*ä»Žé¡¶ç‚¹0å‡ºå‘å¹¿åº¦ä¼˜å…ˆéåŽ†å›¾g*/
+      printf("\nè¯¥å›¾å…±æœ‰%dä¸ªè¿žé€šåˆ†é‡ã€‚\n",count);
       return 0;
 }
 
