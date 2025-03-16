@@ -8,6 +8,26 @@
 /*请将本函数补充完整，并进行测试*/
 linklist delallx(linklist head,int x)
 { 
+    linklist p = head;
+    linklist pre = NULL;  // 前驱指针
+
+    while (p != NULL) {   
+        if (p->info == x) {   
+            if (pre == NULL) {  // 情况1：删除头结点
+                head = p->next; 
+                free(p);        
+                p = head;       
+            } else {            // 情况2：删除中间或末尾结点
+                pre->next = p->next; 
+                free(p);         
+                p = pre->next;  // p指向下一个待检查的结点
+            }
+        } else {               // 未找到x，继续后移
+            pre = p;           // pre跟上p
+            p = p->next;       // p后移
+        }
+    }
+    return head; 
 
 }
 int main()

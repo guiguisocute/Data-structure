@@ -11,10 +11,33 @@ void reverse2(linklist *head)将不带头结点的单链表head就地倒置，
 /*请将本函数补充完整，并进行测试*/
 linklist reverse1(linklist head)
 {
+    linklist new_head = NULL;
+    linklist n_tmp = NULL;          //利用头插法构建一个新的链表，根据头插法的特性，与链表ADT中“读”操作相结合，可以很丝滑地实现倒置
+
+    while(head){
+        n_tmp = head;
+        head = head->next;
+
+        n_tmp->next = new_head;
+        new_head = n_tmp;
+    }
+    return new_head;
 
 }
+
 void reverse2(linklist *head)
 {
+    linklist new_head = NULL;
+    linklist n_tmp = NULL;
+
+    while(*head){
+        n_tmp = *head;
+        *head = (*head)->next;
+
+        n_tmp->next = new_head;
+        new_head = n_tmp;
+    }
+    *head =  new_head;
 
 }
 

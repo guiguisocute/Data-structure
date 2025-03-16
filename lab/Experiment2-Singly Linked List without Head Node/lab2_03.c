@@ -8,10 +8,39 @@
 /**********************************/
 #include "slnklist.h"
 /*请将本函数补充完整，并进行测试*/
-linklist insert(linklist head ,datatype x)
-{
+linklist insert(linklist head, datatype x) {
 
+    linklist newNode = (linklist)malloc(sizeof(node));  //动态分配新节点
+    newNode->info = x;
+    newNode->next = NULL;
+
+    if (head == NULL) {
+        return newNode;
+    }
+
+    linklist pre = NULL;    
+    linklist p = head;
+
+    while(p){
+        if(x < p->info){
+            if(pre == NULL){
+                head = newNode;
+                newNode->next = p;
+            }else{
+                pre->next = newNode;
+                newNode->next = p;
+            }
+            return head;
+        }else{
+            pre = p;
+            p = p->next;
+        }
+    }
+    pre->next = newNode;
+    newNode->next = p;
+    return head;
 }
+
 int main()
 {   datatype x;
     linklist head;
