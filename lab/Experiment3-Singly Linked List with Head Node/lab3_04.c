@@ -27,6 +27,29 @@ void  delallx(linklist head,int x)
         }
 
 }
+/*删除所有的重复元素节点*/
+void del2(linklist head){
+    linklist p;     //保留表头
+    linklist r;
+    linklist q;
+    linklist s;
+    p = head->next;
+    head->next = NULL;
+    r = head;
+    while(p){
+        //查找p指向节点在已经创造的新链表中是否存在（有就说明重复没有就说明没重复）？
+        q = head->next;
+        while(q && q->info != p->info)  //用q去在心链表种去找
+            q = q->next;
+        if(q){
+            //free p指向的节点
+            
+        }
+        else{
+            //插p到head末尾
+        }
+    }
+}
 int main()
 {   datatype x;
     linklist head;

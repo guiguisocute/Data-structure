@@ -7,9 +7,31 @@
 */
 #include "slnklist.h"
 /*请将本函数补充完整，并进行测试*/
-void reverse(linklist head)
+void reverse(linklist head)     //head一直都是“按兵不动的”
 {
+    linklist s = head->next;
+    linklist pre = head;
+    while(s->next){
+        s = s->next;
+        s->next = pre->next;
+        head->next = s;
+        pre = s->next;
+    }
+    return;
+}
 
+void reverse2(linklist head){
+    linklist p;
+    linklist s;
+
+    p = head->next;
+    head->next = NULL;
+    while(p){
+        s = p;
+        p = p->next;
+        s->next = head->next;
+        head->next = s;
+    }
 }
 int main()
 {   datatype x;

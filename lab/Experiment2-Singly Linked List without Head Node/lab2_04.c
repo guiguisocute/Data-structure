@@ -30,6 +30,27 @@ linklist delallx(linklist head,int x)
     return head; 
 
 }
+linklist delallx_fun2(linklist head,int x){
+    linklist newnode_head = NULL;
+    linklist newnode_rear = NULL;
+    linklist p = head;
+
+    while(p){ 
+        linklist next = p->next;    //每次临时保存p的next避免被指针操控后数据销毁  
+        if(p->info != x){
+            if(newnode_head == NULL){
+                newnode_head = p;
+                newnode_rear = p;
+            }else{
+                newnode_rear->next = p;
+                newnode_rear = p;
+            }
+            p->next = NULL;    //只要满足条件当时的p就是在哪一个操作中的实际逻辑的尾结点，其next当然为空
+        }
+        p = next;
+    }
+    return newnode_head;
+}
 int main()
 {   datatype x;
     linklist head;
@@ -37,7 +58,8 @@ int main()
     print(head);
     printf("请输入要删除的值：");
     scanf("%d",&x);
-    head=delallx(head,x);
+    // head=delallx(head,x);
+    head = delallx_fun2(head,x);
     print(head);
     delList(head);
     return 0;

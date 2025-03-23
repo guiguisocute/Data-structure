@@ -8,7 +8,18 @@
 /*请将本函数补充完整，并进行测试*/
 void delx(linklist head,datatype x)
 {
-
+    linklist p = head->next;            //维护一个头结点始终使它存储首元节点的的地址，
+    linklist pre = head;
+    while(p){
+        if(p->info == x){
+            pre->next = p->next;
+            free(p);
+            return;
+        }
+        pre = p;
+        p = p->next;
+    }
+    return;
 }
 
 int main()

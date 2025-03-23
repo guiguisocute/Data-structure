@@ -13,8 +13,8 @@ linklist mergeAscend (linklist L1,linklist L2)将L1和L2合并成一个升序的
 /*请将本函数补充完整，并进行测试*/
 linklist mergeAscend(linklist L1,linklist L2)
 {
-    linklist p,q,r;
-    linklist head;
+    linklist p,q;     //用于L1L2指针移动
+    linklist r,head;    //用于新链表的构建和头指针
     head=(linklist)malloc(sizeof(node));
     head->next=NULL;
     r=head;
@@ -45,10 +45,11 @@ linklist mergeAscend(linklist L1,linklist L2)
     free(L2);
     return head;
 }
+
 linklist mergeDescend(linklist L1,linklist L2)
 {
-    linklist p,q,r;
-    linklist head;
+    linklist p,q;     //用于L1L2指针移动
+    linklist r,head;    //用于新链表的构建和头指针
     head=(linklist)malloc(sizeof(node));
     head->next=NULL;
     p=L1->next;
@@ -94,8 +95,8 @@ int main()
          h2=creatbyqueue();
          print(h1);
          print(h2);
-         //h3=mergeAscend(h1,h2);/*升序合并到h3*/
-         h3=mergeDescend(h1,h2);
+         h3=mergeAscend(h1,h2);/*升序合并到h3*/
+        //  h3=mergeDescend(h1,h2);
             /*降序合并请调用h3=mergeDescend(h1,h2); */
          print(h3);
          delList(h3);
