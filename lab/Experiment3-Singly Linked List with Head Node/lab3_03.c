@@ -10,19 +10,27 @@
 /*请将本函数补充完整，并进行测试*/
 void  insert(linklist head ,datatype x)
 {
-      linklist  pre,p,q;
-      pre=head;
-      p=head->next;
-      while (p && p->info<x)        //查找插入位置
-      {
-          pre=p;
-          p=p->next;
-      }
-      q=(linklist)malloc(sizeof(node));
-      q->info=x;        //插入节点
-      q->next=p;
-      pre->next=q;
+    linklist new = (linklist)malloc(sizeof(node));
+    new->info = x;
+    new->next = NULL;
+    linklist p,pre;
+    pre = head;
+    p = head->next;
+    while(p){
+        if(x < p->info){
+            pre->next = new;
+            new->next = p;
+            return;
+        }else{
+            pre = p;
+            p = p->next;
+        }
+    }
+    pre->next = new;        //边界情况的尾处理
+    return;
 }
+
+
 int main()
 {
     datatype x;

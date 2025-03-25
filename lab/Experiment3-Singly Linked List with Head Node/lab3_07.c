@@ -11,29 +11,30 @@
 /*请将本函数补充完整，并进行测试*/
 void partion(linklist head)
 {
-        linklist  pre,p;
-        pre=head;
-        p=head->next;
-        while (p && p->info %2==1)
-        {
-            pre=p;
-            p=p->next;
+    //奇数尾插偶数头插？不行！创建链表这两不能混用，否则一定会导致混乱，
+    //只能像数组那样创造两个新链表再合并，把偶数单独扔出去（扔出去的操作有点像删结点，不过free变成了指向新结点）再重新接上就可以了（题目没有要求必须保留顺序，方便起见偶数我弄成头插吧）。
+
+    /*实践发现这种方法还是太太太太复杂了，要新增好多新指针不好维护……还是用老师讲的那种
+    跳过前面连续的前导奇数，使得pre留在最后一个奇数上，随后，后面只要遇到奇数就摘下头插到原链表，这样用两个指针就完成了任务*/
+    linklist pre = head;
+    linklist p = head->next;      
+    while(p->info % 2 == 1){
+        pre = p;
+        p = p->next;
+    }
+    while(p){
+        if(p->info % 2 == 1){
+            pre->next = p->next;
+            p->next = head->next;
+            head->next = p;
+            p = pre->next;
+        }else{
+            pre = p;
+            p = p->next;
         }
-        while (p)
-        {
-            if (p->info%2==1)
-            {
-                pre->next=p->next;
-                p->next=head->next;
-                head->next=p;
-                p=pre->next;
-            }
-            else
-            {
-                pre=p;
-                p=p->next;
-            }
-        }
+    }
+
+
 }
 int main()
 {        linklist head;
