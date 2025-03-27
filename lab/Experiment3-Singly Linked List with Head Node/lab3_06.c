@@ -103,8 +103,8 @@ int main()
          h2=creatbyqueue();
          print(h1);
          print(h2);
-        //  h3=mergeAscend(h1,h2);/*升序合并到h3*/
-         h3=mergeDescend(h1,h2);
+         h3=mergeAscend(h1,h2);/*升序合并到h3*/
+        //  h3=mergeDescend(h1,h2);
             /*降序合并请调用h3=mergeDescend(h1,h2); */
          print(h3);
          delList(h3);

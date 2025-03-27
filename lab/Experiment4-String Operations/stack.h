@@ -18,7 +18,7 @@ int stackfull(seqstack *s)          /*判栈满*/
 }
 /*进栈*/
 void push(seqstack *s, datatype x)
-  { s->data[++s->top]=x;
+  { s->data[++s->top]=x;      //s->top是一个整体……弄完了top再++
   }
 /*出栈*/
 datatype pop(seqstack *s)

@@ -1,7 +1,7 @@
 /*
-利用朴素模式匹配算法，将模式t在主串s中所有出现的位置存储在带头结点的单链表中。
+7．利用朴素模式匹配算法，查找模式 t 在主串 s 中所有出现的位置，并将这些位置存储在带头
+结点的单链表中。（实验代码详见 lab4_07.c）
 */
-#include <stdio.h>
 #include <string.h> 
 #include <stdlib.h>
 typedef struct node

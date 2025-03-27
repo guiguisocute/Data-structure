@@ -1,6 +1,6 @@
 /*
-  编写快速模式匹配KMP算法，请将相关函数补充完整。
-*/ 
+8．编写快速模式匹配 KMP 算法，请将相关函数补充完整。（实验代码详见 lab4_08.c）
+*/
 #define maxsize 100
 typedef struct{
       char str[maxsize];

@@ -1,14 +1,24 @@
 /*
-已知字符串采用带结点的链式存储结构（详见linksrting.h文件），
-请编写函数linkstring substring(linkstring s,int i,int len)，
-在字符串s中从第i个位置起取长度为len的子串，函数返回子串链表。
-*/ 
+4．已知字符串采用带结点的链式存储结构（详见 linkstring.h 文件），请编写函数 linkstring
+substring(linkstring s,int i,int len)函数，在字符串 s 中从第 i 个位置起取长度为 len 的子串，函数返回
+子串链表。（实验代码详见 lab4_04.c）
+*/
 
 #include "linkstring.h"
 /*请将本函数补充完整，并进行测试*/
 linkstring substring(linkstring  s, int i, int len)
 {
-
+    //都已经建好链表了，只需要一直遍历到对应位置然后尾插就行了
+    linkstring p = s->next;
+    for(i--;i > 0; i--){
+        p = p->next;
+    }
+    s->next = p;
+    for(len--;len > 0; len--){
+        p = p->next;
+    }
+    p->next = NULL;
+    return s;
 }
 int main()
 {   linkstring str1,str2;
