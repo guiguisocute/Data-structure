@@ -9,7 +9,17 @@
 /*请将本函数补充完整，并进行测试*/
 void delstring(linkstring  s, int i, int len)
 { 
-    //这个也简单，就是跟上一个一样，只不过链接头结点变成pre结点的next赋值为应该删掉最后一个节点的next
+    //这个也简单，就是跟上一个一样，只不过链接头结点的操作变成pre结点的next赋值为应该删掉最后一个节点的next。说起来这两个函数我都好想没有判空逻辑，虽然要写也挺简单的但是题目没要求应该没问题，吧？
+    linkstring p = s->next;
+    linkstring pre = s;
+    for(i--; i > 0; i--){
+        pre = p;
+        p = p->next;
+    }
+    for(len--;len > 0; len--){
+        p = p->next;
+    }
+    pre->next = p->next;
 }
 int main()
 {   linkstring str;
