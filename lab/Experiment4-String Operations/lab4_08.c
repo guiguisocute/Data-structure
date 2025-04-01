@@ -49,6 +49,9 @@ void getnext(seqstring p,int next[])
             }
       }
 }
+//可以把next再处理一下，和next里面的next索引进行比较，不一样就照抄，一样的话就照抄前面
+
+
 
 
 /*快速模式匹配算法，请将函数补充完整*/

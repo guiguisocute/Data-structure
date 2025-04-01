@@ -1,7 +1,6 @@
 /*
 4．已知字符串采用带结点的链式存储结构（详见 linkstring.h 文件），请编写函数 linkstring
-substring(linkstring s,int i,int len)函数，在字符串 s 中从第 i 个位置起取长度为 len 的子串，函数返回
-子串链表。（实验代码详见 lab4_04.c）
+substring(linkstring s,int i,int len)函数，在字符串 s 中从第 i 个位置起取长度为 len 的子串，函数返回子串链表。（实验代码详见 lab4_04.c）
 */
 
 #include "linkstring.h"

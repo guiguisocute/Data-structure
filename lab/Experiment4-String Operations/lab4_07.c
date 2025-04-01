@@ -39,34 +39,32 @@ int index2(char s[],char *t)
 }
 
 /*利用朴素模式匹配算法，将模式t在s中所有出现的位置存储在带头结点的单链表中,请将函数补充完整*/
-linklist indexall(char *s,char *t)
+linklist indexall(char *s, char *t)
 {
-	linklist new  = (linklist)malloc(sizeof(linknode));
-	new->next = NULL;
-	linklist r = new;
-	
-	int current_i = index2(s,t);
-	while(current_i != -1){
-		linklist l_t = (linklist)malloc(sizeof(linknode));
-		l_t->data = index2(s, t);
-		r->next = l_t;
-		l_t->next = NULL;
-		r = l_t;							//不管怎么样先写一下尾插算法
+	linklist head = (linklist)malloc(sizeof(linknode));
+	head->next = NULL;
+	linklist r = head;
+	int m = strlen(t);
+	int n = strlen(s);
+	int offset = 0; // 维护当前查找的起始偏移量
 
-		//接着是更新主串,因为是数组所以得整块往左移，我恨你为什么不是链表
-		char* p_s = s + current_i + strlen(t);
-		int i = 0;
-		while(*p_s != '\0'){
-			s[i] = *p_s;
-			p_s++;
-			i++;
-		}
-		s[i] = '\0';
-		current_i = index2(s, t);  // 更新当前索引
+	while (offset <= n - m)
+	{
+		int current_i = index2(s + offset, t); // 在s+offset处开始查找,会导致找的主串形式上被缩短了
+		if (current_i == -1)
+			break;
+		// 计算绝对位置并添加到链表
+		linklist t_n = (linklist)malloc(sizeof(linknode));
+		t_n->data = offset + current_i;
+		t_n->next = NULL;
+		r->next = t_n;
+		r = t_n;
+		// 更新偏移量到当前匹配位置的下一个可能起始点
+		offset += current_i + m;
 	}
-	return new;
-	
+	return head;
 }
+
 /*输出带头结点的单链表*/
 void print(linklist head)
 {	linklist p;
