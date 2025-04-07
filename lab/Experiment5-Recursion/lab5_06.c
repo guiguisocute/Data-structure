@@ -5,8 +5,7 @@
 
 
 /*函数inList(linklist head,datatype x)的功能是判断带头结点的单链表head中是否含有值为x的结点，有则返回1，无则返回0
-
-还是想另辟蹊径了，要求的inlist满足不了我的思路，改成*/
+*/
 int inList(linklist head,datatype x)
 {   //这个没说要递归，正常遍历就行了
     linklist p = head;

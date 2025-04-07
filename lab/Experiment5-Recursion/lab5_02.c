@@ -28,7 +28,7 @@ void partion(int a[], int left,int right)
 }
 int main()
 {   int a[N];
-    init(a,N);				/*随机产生N个数*/
+    input(a,N);				/*随机产生N个数*/
     print(a,N);
     partion(a,0,N-1);
     print(a,N);
