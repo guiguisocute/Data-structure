@@ -5,15 +5,21 @@
 /*请将本函数补充完整，并进行测试*/
 void delAll(linklist head,datatype x)
 { 
+    //根据提示慢慢一步一步往后写就行了，这个揭老师实在给的太多了哈哈哈
     linklist p;
-    if (            )           //链表为空表
-            return ;
+    if (head->next == NULL)           //链表为空表
+        return ;
     if (head->next->info==x)    //链表的第1个结点值为x
     {
-
+        p = head->next;
+        head->next = p->next;
+        free(p);
+        delAll(head,x);     //进入了这个分支也要递归，要不然没法删重复的了
     }
-    else
-                                //递归调用
+    else{
+        delAll(head->next,x);     //指针一直往前移,直到遇到第1个节点为x的情况
+    }
+                  
 }
 int main()
 {   linklist head;
