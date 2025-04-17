@@ -33,13 +33,49 @@ void levelorder(tree t)    /* t为指向树根结点的指针*/
   }
 }
 
+void levelorder2(tree t){
+  //现在改成用链式队列实现层次遍历
+  if(!t){
+    return;
+  }
+  //无头结点，有尾指针的链表作为链式表
+  linklist queue;
+  linklist rear;
+  
+  // 创建并入队第一个节点
+  queue = (linklist)malloc(sizeof(linknode));
+  queue->info = t;
+  queue->next = NULL;
+  rear = queue;
 
- int main()
- {
-   tree t;
-   printf("please input the preorder sequence of the tree:\n");
-   t=createtree();    //看了一下头文件，这里要使用#代表空树
-   printf("\nthe levelorder is:");
-   levelorder(t);
-   return 0;
- }
+  while(queue){       //只要队列非空
+    tree temp = queue->info;   //保存队头信息
+    printf("%c", temp->data);
+
+    // 将当前节点的所有非空子节点入队
+    for(int i = 0; i < m; i++){
+      if(temp->child[i]){
+        linklist newnode = (linklist)malloc(sizeof(linknode));
+        newnode->info = temp->child[i];
+        newnode->next = NULL;
+        rear->next = newnode;
+        rear = newnode;
+      }
+    }
+
+    // 出队
+    linklist p = queue;
+    queue = queue->next;
+    free(p);
+  }
+}
+
+int main()
+{
+  tree t;
+  printf("please input the preorder sequence of the tree:\n");
+  t = createtree(); // 看了一下头文件，这里要使用#代表空树
+  printf("\nthe levelorder is:");
+  levelorder2(t);
+  return 0;
+}

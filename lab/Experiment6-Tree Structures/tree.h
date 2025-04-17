@@ -13,6 +13,14 @@ typedef struct node {
 //这个好像是孩子表示法？
 
 typedef  node *tree;
+
+typedef struct linknode
+{
+    tree info;
+    struct linknode *next;
+} linknode;
+typedef linknode *linklist; // 链式栈存储结构
+
 /********************************************************/
 /*  函数功能:根据树的前序遍历结果建立一棵3度树	  	   */
 /*  函数返回值:树根地址								   */
@@ -53,6 +61,7 @@ void preorder(tree t)
 
 void postorder(tree t)
 //用递归后序遍历的方法打印树（先访问所有子树最后访问根节点）
+//左子树→右子树→根
 {
     int i;
     if (t)
