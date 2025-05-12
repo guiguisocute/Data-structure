@@ -38,7 +38,7 @@ void levelorder2(tree t){
   if(!t){
     return;
   }
-  //无头结点，有尾指针的链表作为链式表
+  //无头结点，有尾指针的链表作为链式队列
   linklist queue;
   linklist rear;
   

@@ -5,6 +5,8 @@
 
 #include "bintree.h"
 char *a="ABC##D##EF#G###";  /*扩充二叉树序树t的前序序列*/
+
+//函数1返回最右节点，函数2返回最左边的结点
 bintree prelast(bintree t)
 {
 

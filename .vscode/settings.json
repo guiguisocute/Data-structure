@@ -7,6 +7,7 @@
         "stdio.h": "c",
         "A3.C": "cpp",
         "B2.C": "cpp",
-        "lab8_04.C": "cpp"
+        "lab8_04.C": "cpp",
+        "lab8_06.C": "cpp"
     }
 }

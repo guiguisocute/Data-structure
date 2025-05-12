@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #define N 100 
 extern char *a;     /*存放扩充二叉树的前序序列*/
+// ·extern· ：用于声明外部变量，避免重复定义并说明变量已在别处分配存储。相当于告诉编译器“变量 a 在别的地方已被定义，这里只是引用它，不要再分配存储
+
 typedef struct node /*二叉树结构定义*/
 {
     char data;
@@ -14,7 +16,7 @@ bintree  creatbintree()
 {
     char ch=*a++;
     bintree t;
-    if  (ch=='#')  t=NULL;
+    if  (ch=='#')  t=NULL;  //这点也是比较重要的
     else
     { t=(bintree)malloc(sizeof(binnode));
       t->data=ch;
@@ -47,9 +49,9 @@ void postorder(bintree t)  /*后序递归遍历二叉树*/
 /*顺序栈定义*/
 typedef struct
 {
-    bintree data[N];
+    bintree data[N];    //这里存着一堆树结点
     int top;
-    int tag[N];
+    int tag[N]; // 具体来说，tag[i] 对应着栈中 data[i] 所指向的那棵子树的遍历状态,用于需要多次检查同一节点状态的算法
 }seqstack;
 
 void init(seqstack *s)   /*初始化空栈*/
