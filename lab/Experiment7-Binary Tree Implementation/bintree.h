@@ -77,4 +77,5 @@ bintree pop(seqstack *s)			/*出栈*/
 {
     if (!empty(s))
         return s->data[s->top--];
+    return NULL;
 }

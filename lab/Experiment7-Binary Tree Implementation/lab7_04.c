@@ -9,7 +9,20 @@ char *a="ABC##D##EF#G###";  		/*扩充二叉树序树t的前序序列*/
 */
 int Depth(bintree t,char x)
 {
-
+   //递归，爽！左边找到了那就左边的深度+1（别管这深度怎么来的），右边找到了就右边深度+1，根本身那就是1
+   if(!t)
+         return 0;
+   if(t->data == x)
+      return 1;
+   
+   int left = Depth(t->lchild,x);
+   int right = Depth(t->rchild, x);
+   
+   if(left > 0)
+      return left + 1;
+   if(right > 0)
+      return right + 1;
+   return 0;
 }
 
 int main()

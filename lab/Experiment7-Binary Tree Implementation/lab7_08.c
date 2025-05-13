@@ -14,9 +14,48 @@ typedef struct{
 /*
     函数bintreeWidth(t)用于计算二叉树t的宽度，请将本函数补充完整
 */
+//揭老师都帮我建立了队列结构体了，还有这种好事.jpg？思路简简单单，先进队根，层次标成是1，然后循环队非空的话，先放*队首*的儿子们，儿子们的level等于队首level+1，再出队（前提是得有）层数加一，然后同时维护一个count数组和一个max变量，边建立边更新(每次进循环最开始的时候检查一下)，return max就结束了
 int bintreeWidth(bintree t)
 {
+    if (t == NULL)
+        return 0;
 
+    seqQueue a;
+    a.f = 0;
+    a.r = 0;
+    a.qu[a.r] = t;
+    a.level[a.r] = 1;
+    a.r++;
+    int count[N] = {0};     //记得数组初始化，要不然全是随机值
+    count[0] = -1;
+    int max = 0;
+    //队列初始化
+
+
+    while(a.f < a.r){
+        bintree u = a.qu[a.f];
+        int lvl = a.level[a.f];
+        count[lvl]++;
+        if(count[lvl] > max)
+            max = count[lvl];   //更新max
+
+        if (u->lchild && a.r < N)
+        { // 队首有孩子就进队
+
+            a.qu[a.r] = u->lchild;
+            a.level[a.r] = lvl + 1;
+            a.r++;
+        }
+        if (u->rchild && a.r < N)
+        { // 队首有孩子就进队
+
+            a.qu[a.r] = u->rchild;
+            a.level[a.r] = lvl + 1;
+            a.r++;
+        }
+        a.f++;
+    }
+    return max;
 
 }
 int main()
