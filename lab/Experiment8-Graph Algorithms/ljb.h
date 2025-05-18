@@ -5,16 +5,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define M 20					/*预定义图的最大顶点数*/
-typedef char DataType;  /*顶点信息数据类型*/
-typedef struct node{    /*边表结点*/
-   int adjvex;                  /*邻接点*/
-   struct node *next;
-}EdgeNode;
+typedef char DataType;  /*顶点信息数据类型，在此处，这里规定了每个顶点存储一个字符信息*/
 
-typedef struct vnode{   /*头结点类型*/
-   DataType vertex;         /*顶点信息*/
-   EdgeNode *FirstEdge; /*邻接链表头指针*/
-}VertexNode;
+//邻接表最重要的一点：顶点表后面的边表顺序其实无所谓的，取决于输入人，如果是无向图，那更没法预测了，邻接表的链表就真只能表示这个顶点所有的边，没法规定说顺序怎么样怎么样
+
+typedef struct node{    /*边表结点*/
+      int adjvex;                  /*邻接点*/
+      // int weight;                 /*边的权值（假设有）*/ 
+      struct node *next;
+   }EdgeNode;
+   // 每个 EdgeNode 表示一条「从某顶点出发」的边，adjvex 存储*被*指向顶点的序号，next 串起该顶点的所有邻接边。
+
+   typedef struct vnode
+   {                       /*头结点类型*/
+      DataType vertex;     /*顶点信息*/
+      EdgeNode *FirstEdge; /*邻接链表头指针*/
+   } VertexNode;
 
 typedef struct{           /*邻接表类型*/
  VertexNode adjlist[M];  /*存放头结点的顺序表*/
@@ -37,8 +43,8 @@ void creat(LinkedGraph *g,char *filename,int c)
     
       for(i=0;i<g->n;i++)
        {
-            fscanf(fp,"%1s",&g->adjlist[i].vertex);    /*读入顶点信息*/
-            g->adjlist[i].FirstEdge=NULL;         /*边表置为空表*/
+          fscanf(fp, " %c", &g->adjlist[i].vertex); /*读入顶点信息*/
+          g->adjlist[i].FirstEdge = NULL;           /*边表置为空表*/
        }
   
       for(k=0;k<g->e;k++)                     /*循环e次建立边表*/
@@ -48,7 +54,9 @@ void creat(LinkedGraph *g,char *filename,int c)
             s->adjvex=j;                         /*邻接点序号为j*/
             s->next=g->adjlist[i].FirstEdge;
             g->adjlist[i].FirstEdge=s;           /*将新结点*s插入顶点vi的边表头部*/
-            if (c==0)                            /*无向图*/ 
+            /*这好像是头插，实际生成出来的边表链应该是倒置的*/
+
+            if (c==0)                            /*无向图，这就真的只是一个简单粗暴地标识符啊*/ 
             {
             s=(EdgeNode *)malloc(sizeof(EdgeNode));
             s->adjvex=i;                         /*邻接点序号为i*/
