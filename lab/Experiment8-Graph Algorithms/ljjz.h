@@ -17,7 +17,7 @@ typedef struct{
      函数参数：邻接矩阵的指针变量g；存放图信息的文件名s；图的类型c，c=0表示建立无向图，否则表示建立有向图 
    函数返回值：无
 */ 
-void creat(Mgraph *g,char *s ,int c)
+void creat(Mgraph *g, const char *s ,int c)
 {int i,j,k,w;           /*建立网络的邻接矩阵存储结构*/
    FILE *rf ;
    rf = fopen(s, "r") ;   /*从文件中读取图的边信息*/
