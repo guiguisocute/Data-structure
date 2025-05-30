@@ -5,9 +5,26 @@
 #define N 10000          /*数据量*/
 /*请将本函数补充完整，并进行测试*/
 int binSearch(int a[],int low,int high,int key)
+//可否理解折半查找判定树实质上是由这个演变的？，有点前序的感觉又有点中序的感觉
 {
-
-
+    if(low > high){
+        return -1;
+    }else{
+        int mid = (high + low) / 2 ;       
+        if (key == a[mid])
+        {
+            return mid;
+        }
+        if (key > a[mid])
+        {
+            return binSearch(a, mid + 1, high, key);
+        }
+        if (key < a[mid])
+        {
+            return binSearch(a, low, mid - 1, key);
+        }
+    }
+    return -1;
 }
 
 int main()

@@ -4,11 +4,17 @@
 */
 
 #include "slnklist.h"
-#define N 100          /*数据量*/
+#define N 500000          /*数据量*/
 /*请将本函数补充完整，并进行测试*/
 linklist  seqsearch(linklist  head, int key)
 {
-
+    linklist p = head->next;
+    while(p){
+        if(p->info == key)
+            break;
+        p = p->next;
+    }
+    return p;
 }
 
 int main()

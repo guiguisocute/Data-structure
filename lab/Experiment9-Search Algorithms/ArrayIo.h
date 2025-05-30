@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define MAX 500000 
+#define MAX 2000001 
 
 /*从文件中读入数据存入数组a*/
 int readData(int a[], int n,char *f )  /*函数返回成功读入的数据个数*/

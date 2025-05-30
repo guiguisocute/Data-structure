@@ -7,8 +7,19 @@
 /*请将本函数补充完整，并进行测试*/
 int binSearch(int a[],int n,int key)
 {
-
-
+    int left = 0, right = n -1;
+    while(left <= right){
+        int mid = (left + right) / 2;
+        if(a[mid] == key)
+            return mid;
+        else if(key > a[mid]){
+            left = mid + 1;
+        }
+        else{
+            right = mid - 1;
+        }
+    }
+    return -1;
 }
 
 int main()
