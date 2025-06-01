@@ -5,7 +5,7 @@
 #include "Arrayio.h"
 #include <time.h>
 //为了对比一下时间问了LM要了个测试函数，看一下数据量对ON2算法的影响
-#define N 10000     /*N为数据量大小，因data1.txt中只有50万个数，所以自行设定N值时需让N<=500000*/
+#define N 500000     /*N为数据量大小，因data1.txt中只有50万个数，所以自行设定N值时需让N<=500000*/
 
 /*请将本函数补充完整，并进行测试*/
 void insertSort(int a[],int n)

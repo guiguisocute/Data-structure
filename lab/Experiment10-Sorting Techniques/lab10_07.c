@@ -5,7 +5,7 @@
 #include "Arrayio.h"
 #include <stdlib.h>
 #include <time.h>
-#define N 10000     /*N为数据量大小，因data1.txt中只有50万个数，所以自行设定N值时需让N<=500000*/
+#define N 500000     /*N为数据量大小，因data1.txt中只有50万个数，所以自行设定N值时需让N<=500000*/
 
 /*请将本函数补充完整，并进行测试*/
 //任取一个元素作为“枢轴”，建立left和right两个指针，划分成左边全小于枢轴，右边全大于枢轴

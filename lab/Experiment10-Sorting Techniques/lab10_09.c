@@ -74,11 +74,6 @@ void radixSort(linklist head)
     tail->next = NULL; 
 // 经过一轮分配和收集，链表已按当前位(e)有序
   }
-
-
-  
-  
-
 }
 int  main()
 {
